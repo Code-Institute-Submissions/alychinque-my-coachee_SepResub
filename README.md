@@ -10,6 +10,7 @@ Happy Code! 👨‍💻 Happy days!
 * [UX](#ux)🎯
     * [User Goals](#user-goals)
     * [User Stories](#user-stories)
+    * [Site Owners Goals](#site-owners-goals)
 
 
 ### **User Goals**
@@ -33,3 +34,8 @@ Happy Code! 👨‍💻 Happy days!
 * As a user, I would like to send some materials after each session via email.
 * As a user, I would like to add, update and delete my own material.
 * As a user, I want to be able to subscribe to a plan.
+
+### **Site owners Goals**
+* Have a valuable web platform.
+* Have great tools to help coaches get organized.
+* Have membership plans.
