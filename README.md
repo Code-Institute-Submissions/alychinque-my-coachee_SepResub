@@ -12,6 +12,11 @@ Happy Code! 👨‍💻 Happy days!
     * [User Stories](#user-stories)
     * [Site Owners Goals](#site-owners-goals)
     * [User Requirements and Expectations](#user-requirements-and-expectations)
+        * [Requirements](#requirements)
+        * [Expectations](#expectations)
+    * [Design Choices](#design-choices)🎨
+        * [Fonts](#fonts)
+        * [Structure](#structure)
 
 
 ### **User Goals**
@@ -59,3 +64,13 @@ Happy Code! 👨‍💻 Happy days!
 * To have a dashboard where all the necessary information is visible.
 * It should be easy to add, edit, and delete coachees, sessions and materials.
 * It should be multiplatform.
+
+### **Design Choices**🎨
+TO BE DEFINED
+
+#### Fonts
+TO BE DEFINED
+
+#### Structure
+I will use [Boootstrap](https://getbootstrap.com/) to create an overall structure for the web platform. 
+Bootstrap provides various elements of CSS and Javascript which is very helpful to keep a good structure throughout the pages.
