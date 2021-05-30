@@ -52,3 +52,10 @@ Happy Code! 👨‍💻 Happy days!
 * Ability to add, edit, and delete sessions.
 * Ability to add, edit, and delete materials like books, movies, and activities.
 * See a report with information about hours spent in the platform.
+
+#### Expectations
+
+* A powerful platform to organize all coachees and sessions.
+* To have a dashboard where all the necessary information is visible.
+* It should be easy to add, edit, and delete coachees, sessions and materials.
+* It should be multiplatform.
