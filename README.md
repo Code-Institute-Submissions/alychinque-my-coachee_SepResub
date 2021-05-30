@@ -11,6 +11,7 @@ Happy Code! 👨‍💻 Happy days!
     * [User Goals](#user-goals)
     * [User Stories](#user-stories)
     * [Site Owners Goals](#site-owners-goals)
+    * [User Requirements and Expectations](#user-requirements-and-expectations)
 
 
 ### **User Goals**
@@ -39,3 +40,15 @@ Happy Code! 👨‍💻 Happy days!
 * Have a valuable web platform.
 * Have great tools to help coaches get organized.
 * Have membership plans.
+
+### **User Requirements and Expectations**
+
+#### Requirements
+
+* Easy to navigate by using few buttons.
+* Appealing dashboard with a functional overview.
+* Easy way to subscribe.
+* Ability to add, edit, and delete coachees.
+* Ability to add, edit, and delete sessions.
+* Ability to add, edit, and delete materials like books, movies, and activities.
+* See a report with information about hours spent in the platform.
