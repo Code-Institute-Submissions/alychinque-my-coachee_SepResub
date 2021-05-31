@@ -30,21 +30,31 @@ Happy Code! 👨‍💻 Happy days!
 * This web platform has to be user friendly.
 * Visually appealing web application.
 
-### **User Stories**
-
-* As a user, I would like to be able to register for the web platform so I can have my personal environment.
-* As a user, I want to login after I created an account and see my previous inserted information.
-* As a user, I want to be able to add, update and delete coachees.
-* As a user, I want to be able to add, update and delete sessions.
-* As a user, I would like to see the content of the previous sessions in the current session.
-* As a user, I would like to send some materials after each session via email.
-* As a user, I would like to add, update and delete my own material.
-* As a user, I want to be able to subscribe to a plan.
-
 ### **Site owners Goals**
 * Have a valuable web platform.
 * Have great tools to help coaches get organized.
 * Have membership plans.
+
+### **User Stories**
+
+#### As a user, I would like...
+
+* To be able to register for the web platform so I can have my personal environment.
+* To login after I created an account and see my previous inserted information.
+* To be able to add, update, and delete coachees.
+* To be able to add, update, and delete sessions.
+* To see the content of the previous sessions in the current session.
+* To send some materials after each session via email.
+* To add, update and delete my own material.
+* To be able to subscribe to a plan.
+
+#### As a site's owner, I would like...
+
+* To add, update, and delete some interesting news for coaches subscribed.
+* To add, update, and delete material.
+* To have clean pages.
+* To have three different plans.
+
 
 ### **User Requirements and Expectations**
 
