@@ -84,3 +84,19 @@ TO BE DEFINED
 #### Structure
 I will use [Boootstrap](https://getbootstrap.com/) to create an overall structure for the web platform. 
 Bootstrap provides various elements of CSS and Javascript which is very helpful to keep a good structure throughout the pages.
+
+## **Wireframes and Flowcharts**👨‍🔧
+
+### **Wireframes**
+I used [Draw.io](https://draw.io/) to create wireframes for my website. 
+
+You can find my wireframes below:
+
+#### Desktop Wireframes
+* [Go to Desktop Wireframes](wireframes/desktop-wireframes.pdf)
+
+#### Mobile Wireframes
+* [Go to Mobile Wireframes](wireframes/mobile-wireframes.pdf)
+
+#### Tablet Wireframes
+* [Go to Table Wireframes](wireframes/tablet-wireframes.pdf)
