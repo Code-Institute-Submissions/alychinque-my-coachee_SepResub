@@ -1,6 +1,12 @@
-{% extends "base.html" %}#
+{% extends "base.html" %}
+
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static '/home/css/home.css' %}">
+{% endblock %}
+
 {% block content %}
-    <h1 class="display-4 text-success">It Works!</h1>
+{% include 'navigation/navigation.html' %}
+    <h1 class="display-4 pt-5 mt-5 text-success">It Works!</h1>
 {% endblock %}
