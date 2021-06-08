@@ -3,7 +3,31 @@
   padding: 0;
 }
 
-.fa-bars {
-  font-size: 2rem;
-  font-weight: 900;
+body{
+  background-image: linear-gradient(to right, #ffe7e3, #ebbee9);
+}
+
+main{
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(134, 108, 133, 0.654);
+  width: 95%;
+  height: 400px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+}
+.navbar{
+  background-image: linear-gradient(to right, #ffe7e3, #ebbee9,
+  #846eff, #59bbe8, #a7ffcd);
+}
+.div{
+  
+}
+
+@media screen and (min-width: 690px) {
+  main{
+    width: 50rem;
+    height: 600px;
+  }
 }
