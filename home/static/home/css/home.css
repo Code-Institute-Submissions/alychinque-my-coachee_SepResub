@@ -21,13 +21,14 @@ main{
   background-image: linear-gradient(to right, #ffe7e3, #ebbee9,
   #846eff, #59bbe8, #a7ffcd);
 }
-.div{
-  
+
+.about{
+  padding: 10px 100px;
 }
 
 @media screen and (min-width: 690px) {
   main{
     width: 50rem;
-    height: 600px;
+    height: 650px;
   }
 }
