@@ -1,8 +1,9 @@
-body{
-    background-color: rgb(19, 209, 19);
-
+*{
+  margin: 0;
+  padding: 0;
 }
 
-#navbar{
-    color: honeydew!important;
+.fa-bars {
+  font-size: 2rem;
+  font-weight: 900;
 }
