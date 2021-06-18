@@ -34,8 +34,9 @@ main{
   opacity: 0;
   background-color: rgba(26, 188, 156, 0.9);
 }
-.pillar .pillar-item .pillar-item-caption:hover {
-  opacity: 1;
+.pillar .pillar-item {
+  padding: 1.2rem;
+  background-color: #a7ffcd !important;
 }
 .pillar .pillar-item .pillar-item-caption .pillar-item-caption-content {
   font-size: 1.5rem;
