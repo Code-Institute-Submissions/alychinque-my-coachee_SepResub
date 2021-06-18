@@ -1,0 +1,30 @@
+<section class="contact" id="contact">
+    <!-- Contact Section Heading-->
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Us</h2>
+    <form action="{% url 'home' %}" method="POST">
+        {% csrf_token %}
+        <div>
+            <div class="row col-8 offset-2">
+                <div class="form-group">
+                    <label for="controlInput1">Name</label>
+                    <input type="name" class="form-control" id="input" placeholder="fullname" required>
+                </div>
+                <div class="form-group">
+                    <label for="controlInput1">Email address</label>
+                    <input type="email" class="form-control" id="input1" placeholder="name@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="controlInput1">Phone </label>
+                    <input type="phone" class="form-control" id="input1" placeholder="00-000-0000" required>
+                </div>
+                <div class="form-group">
+                    <label for="controlTextarea1">Message</label>
+                    <textarea class="form-control" id="controlTextarea1" rows="3" required></textarea>
+                </div>
+            </div>
+            <div class="row col-4 offset-4 mt-3 mb-5">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</section>
