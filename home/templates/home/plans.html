@@ -1,4 +1,14 @@
-<section class="plans" id="plans">
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static '/home/css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+{% include 'navigation/navigation.html' %}
+<section class="page-section plans" id="plans">
     <!-- Plans Section Heading-->
     <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Plans</h2>
    <!-- Plans -->
@@ -50,3 +60,4 @@
 
    </div>
 </section>
+{% endblock %}

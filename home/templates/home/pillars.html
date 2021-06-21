@@ -1,3 +1,13 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static '/home/css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+{% include 'navigation/navigation.html' %}
 <section class="page-section pillar mt-5" id="pillars">
     <div class="container mt-5">
         <!-- Portfolio Section Heading-->
@@ -485,3 +495,4 @@
         </div>
     </div>
 </section>
+{% endblock %}
