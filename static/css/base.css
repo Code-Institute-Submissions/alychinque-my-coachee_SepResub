@@ -1,13 +1,13 @@
-*{
+* {
     margin: 0;
     padding: 0;
-  }
-  
-  body{
+}
+
+body {
     background-image: linear-gradient(to right, #ffe7e3, #ebbee9);
-  }
-  
-  main{
+}
+
+main {
     background-color: white;
     border-radius: 10px;
     box-shadow: 5px 5px 15px rgba(134, 108, 133, 0.654);
@@ -16,82 +16,99 @@
     padding-left: 15px;
     padding-right: 15px;
     margin: auto;
-  }
-  .navbar{
-    background-image: linear-gradient(to right, #ffe7e3, #ebbee9,
-    #846eff, #59bbe8, #a7ffcd);
-  }
-  
-  .about{
+}
+
+.navbar {
+    background-image: linear-gradient(to right, #ffe7e3, #ebbee9, #846eff, #59bbe8, #a7ffcd);
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
+}
+
+.my-jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #e9ecef;
+    border-radius: .3rem;
+}
+
+.about {
     padding: 10px 100px;
-  }
-  
-  .pillar .pillar-item .pillar-item-caption {
+}
+
+.pillar .pillar-item .pillar-item-caption {
     position: absolute;
     top: 0;
     left: 0;
     transition: all 0.2s ease-in-out;
     opacity: 0;
     background-color: rgba(26, 188, 156, 0.9);
-  }
-  .pillar .pillar-item {
+}
+
+.pillar .pillar-item {
     padding: 1.2rem;
     background-color: #a7ffcd !important;
-  }
-  .pillar .pillar-item .pillar-item-caption .pillar-item-caption-content {
+}
+
+.pillar .pillar-item .pillar-item-caption .pillar-item-caption-content {
     font-size: 1.5rem;
-  }
-  
-  .pillar-modal .btn-close {
+}
+
+.pillar-modal .btn-close {
     color: #1abc9c;
     font-size: 2rem;
     padding: 1rem;
-  }
-  .pillar-modal .pillar-modal-title {
+}
+
+.pillar-modal .pillar-modal-title {
     font-size: 2.25rem;
     line-height: 2rem;
-  }
-  
-  .pillar .pillar-item {
+}
+
+.pillar .pillar-item {
     cursor: pointer;
     position: relative;
     display: block;
     max-width: 25rem;
     border-radius: 0.5rem;
     overflow: hidden;
-  }
-  
-  .pillar .pillar-item .pillar-item-caption {
+}
+
+.pillar .pillar-item .pillar-item-caption {
     position: absolute;
     top: 0;
     left: 0;
     transition: all 0.2s ease-in-out;
     opacity: 0;
     background-color: rgba(26, 188, 156, 0.9);
-  }
-  
-  .container{
+}
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     max-width: 1200px;
     padding: 100px 0 50px;
-  }
-  
-  .container .card{
+}
+
+.container .card {
     position: relative;
     min-width: 320px;
     height: 500px;
     box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2);
-    inset: -5px -5px 15px rgba(255, 255, 255, 0.1),
-    5px 5px 15px rgba(255, 255, 255, 0.3),
-    -5px -5px 15px rgba(255, 255, 255, 0.1);
+    inset: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(255, 255, 255, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     margin: 30px;
-  }
-  
-  .container .card .box{
+}
+
+.container .card .box {
     position: absolute;
     top: 20px;
     left: 20px;
@@ -104,19 +121,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .container .card:hover .box{
+}
+
+.container .card:hover .box {
     transform: translateY(-50px);
     box-shadow: 0 40px 70px rgba(0, 0, 0, 0.5);
-  }
-  
-  .container .card .box .content{
+}
+
+.container .card .box .content {
     padding: 20px;
     text-align: center;
-  }
-  
-  .container .card .box .content .icon{
+}
+
+.container .card .box .content .icon {
     position: relative;
     width: 80px;
     height: 80px;
@@ -127,42 +144,42 @@
     align-items: center;
     border-radius: 50%;
     margin-bottom: 10px;
-  }
-  
-  .container .card .box .content .icon .svg-inline--fa {
+}
+
+.container .card .box .content .icon .svg-inline--fa {
     color: #fff;
     font-size: 2em;
-  }
-  
-  .container .card .box .content h3{
+}
+
+.container .card .box .content h3 {
     font-size: 1.8em;
     color: white;
     font-weight: 300;
-  }
-  
-  .container .card .box .content h4{
+}
+
+.container .card .box .content h4 {
     color: #fff;
     font-size: 3em;
     font-weight: 700;
-  }
-  
-  .container .card .box .content ul{
+}
+
+.container .card .box .content ul {
     position: relative;
     justify-content: center;
     padding: 0;
-  }
-  
-  .container .card .box .content ul li{
+}
+
+.container .card .box .content ul li {
     list-style: none;
     color: #fff;
     margin: 5px 0;
-  }
-  
-  .container .card .box .content ul li .fa-check{
+}
+
+.container .card .box .content ul li .fa-check {
     color: #0f0;
-  }
-  
-  .container .card .box .content a {
+}
+
+.container .card .box .content a {
     position: relative;
     display: inline-block;
     padding: 8px 20px;
@@ -171,40 +188,40 @@
     text-decoration: none;
     color: #000;
     font-weight: 400;
-  }
-  
-  .container .card:nth-child(1) .box .content a,
-  .container .card:nth-child(1) .box .content .icon{
+}
+
+.container .card:nth-child(1) .box .content a,
+.container .card:nth-child(1) .box .content .icon {
     background: #ed6464;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  .container .card:nth-child(2) .box .content a,
-  .container .card:nth-child(2) .box .content .icon{
+}
+
+.container .card:nth-child(2) .box .content a,
+.container .card:nth-child(2) .box .content .icon {
     background: #8bf76d;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  .container .card:nth-child(3) .box .content a,
-  .container .card:nth-child(3) .box .content .icon{
+}
+
+.container .card:nth-child(3) .box .content a,
+.container .card:nth-child(3) .box .content .icon {
     background: #eded64;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  .contact-header{
+}
+
+.contact-header {
     padding-top: 3rem;
-  }
-  
-  @media (min-width: 992px) {
+}
+
+@media (min-width: 992px) {
     .pillar-modal .pillar-modal-title {
-      font-size: 3rem;
-      line-height: 2.5rem;
+        font-size: 3rem;
+        line-height: 2.5rem;
     }
-  }
-  
-  @media screen and (min-width: 690px) {
-    main{
-      width: 50rem;
-      height: 650px;
+}
+
+@media screen and (min-width: 690px) {
+    main {
+        width: 50rem;
+        height: 650px;
     }
-  }
+}
