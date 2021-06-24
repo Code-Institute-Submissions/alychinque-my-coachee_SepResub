@@ -33,3 +33,6 @@ def pillars(request):
 
 def plans(request):
     return render(request, 'home/plans.html')
+
+def coach_page(request):
+    return render(request, 'home/coach_page.html')
