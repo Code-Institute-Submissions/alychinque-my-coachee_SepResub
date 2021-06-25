@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+
+
+{% block content %}
+<br>
+<br> 
+<br>
+<section class="table-section text-center">
+	<div class="table-responsive">
+		<table id="manager_table" class="table display responsive">
+			<!--header-->
+			<thead style="text-transform: uppercase;">
+				<tr>
+					<th class="all">Nome</th>
+					<th class="all">Email</th>
+					<th class="all">Phone</th>
+					<th class="all">Date Of Birth</th>
+					<th class="all">Gender</th>
+					<th class="all">Edit</th>
+					<th class="all">Delete</th>
+				</tr>
+			</thead>
+			<!--body-->
+			<tbody>
+			<!--loop over activity content-->
+			
+			{% for coachee in coachees %}					
+					    
+			    <tr dt-responsive>
+
+					<td>{{ coachee.name}} </td>
+					<td>{{ coachee.email}}</td>
+					<td>{{ coachee.phone_number}}</td>
+					<td>{{ coachee.date_of_birth}}</td>
+					<td>{{ coachee.gender}}</td>
+					<td><a href="{% url 'profiles:coachee_edit' pk=coachee.pk %}">edit</a></td>
+					<td><a href="{% url 'profiles:coachee_delete' pk=coachee.pk %}">delete</a></td>
+				</tr>
+
+			{% empty %}
+				<h3>There are not Coaches Added.</h3>
+			{% endfor %}	
+			</tbody>
+		</table>
+
+	</div>
+
+</section>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+<br>
+<br>
+
+{% endblock %}
+
+
