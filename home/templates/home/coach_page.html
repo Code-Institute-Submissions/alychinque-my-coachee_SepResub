@@ -7,20 +7,39 @@
 
 <h1 class="mt-5">Coach Page</h1>
 
-<a href="">Coachees</a>
-<br>
-<a href="">Book Session</a>
-<br>
-<a href="">Add Coachee</a>
-<br>
-<a href="">Indications</a>
-<br>
-<a href=""></a>
-<br>
-<a href=""></a>
-<br>
-<a href=""></a>
-<br>
-<a href=""></a>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <a href="{% url 'profiles:coachee_list' %}">Coachees</a>
+        </div>
+        <div class="col">
+            <a href="">Book Session</a>
+        </div>
+        <div class="col">
+            <a href="{% url 'profiles:coachee_create' %}">Add Coachee</a>
+        </div>
+        <div class="col">
+            <a href="">Indications</a>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="row">
+        <div class="col">
+            <a href="">Agenda</a>
+        </div>
+        <div class="col">
+            <a href="">Report</a>
+        </div>
+        <div class="col">
+            <a href="">Blog</a>
+        </div>
+        <div class="col">
+            Contact
+        </div>
+    </div>
+    </div>
+</div>
 
 {% endblock %}
