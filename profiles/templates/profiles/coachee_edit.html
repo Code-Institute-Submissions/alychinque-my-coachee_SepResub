@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+
+
+{% block content %}
+{% if request.user.coach %}
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10 mt-5">
+        <h1 style="text-transform: uppercase;">Edit Coachee</h1> <br>
+        <form action="" method="post" style="text-transform: uppercase;">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {{ form.media }}
+            <div>
+                <button class="btn btn-success btn-lg btn-block" type="submit"
+                    style="text-transform: uppercase;">Edit Coachee</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-1"></div>
+    <br>
+</div>
+{% else %}
+<h2>You Do Not Have Permission</h2> 
+{% endif %}
+{% endblock %}
