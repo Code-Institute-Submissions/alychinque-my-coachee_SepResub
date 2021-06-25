@@ -29,3 +29,36 @@ class CoachList(ListView):
 
 #view delete
 #view update
+
+class CoacheeCreate(CreateView):
+    model = Coachee
+    fields = [
+        'name', 'email', 'date_of_birth', 'phone_number', 'gender'
+    ]
+    success_url = "/"
+    template_name = "profiles/coachee_create.html"
+
+    def form_valid(self, form):
+        instance = form.save(commit=False)
+        instance.coach = self.request.user.coach
+        instance.save()
+        return super(CoacheeCreate, self).form_valid(form)
+
+class CoacheeList(ListView):
+	model = Coach
+	template_name = "profiles/coachee_list.html"
+	context_object_name = 'coachees'
+	paginate_by = 10
+	queryset = Coachee.objects.all()
+
+class CoacheeEdit(UpdateView):
+	model = Coachee
+	fields = ['name', 'email', 'date_of_birth', 'phone_number', 'gender']
+	template_name = 'profiles/coachee_edit.html'
+	success_url = '/profiles/coachee_list/'
+
+
+class CoacheeDelete(DeleteView):
+	model = Coachee
+	template_name = 'profiles/coachee_delete.html'
+	success_url = '/profiles/coachee_list/'
