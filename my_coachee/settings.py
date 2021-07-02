@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'home',
     'profiles',
-    'bootstrap5',
+    'bootstrap4',
+    'indications',
 ]
 
 MIDDLEWARE = [
