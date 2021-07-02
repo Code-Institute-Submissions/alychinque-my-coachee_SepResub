@@ -1,26 +1,25 @@
-from profiles.models import Coachee
+from profiles.models import Coachee, Coach
 from indications.models import Indication
 from django.db import models
 
 class Session(models.Model):
-    coach = models.ForeignKey('Coach', null=True, blank=True, on_delete=models.SET_NULL)
-    coachee = models.ForeignKey('Coachee', null=True, blank=True, on_delete=models.SET_NULL)
+    coach = models.ForeignKey(Coach, null=True, blank=True, on_delete=models.SET_NULL)
+    coachee = models.ForeignKey(Coachee, null=True, blank=True, on_delete=models.SET_NULL)
     session = models.IntegerField()
     date = models.DateField()
     time = models.TimeField()
-    jornal = models.TextField()
-    indications1 = models.ForeignKey('Indications', null=True, blank=True, on_delete=models.SET_NULL)
-    indications2 = models.ForeignKey('Indications', null=True, blank=True, on_delete=models.SET_NULL)
-    indications3 = models.ForeignKey('Indications', null=True, blank=True, on_delete=models.SET_NULL)
+    jornal = models.TextField(null=True, blank=True)
+    indications1 = models.ForeignKey(Indication, related_name="indication1", null=True, blank=True, on_delete=models.SET_NULL)
+    indications2 = models.ForeignKey(Indication, related_name="indication2", null=True, blank=True, on_delete=models.SET_NULL)
+    indications3 = models.ForeignKey(Indication, related_name="indication3", null=True, blank=True, on_delete=models.SET_NULL)
     concluded = models.BooleanField()
 
     def __str__(self):
-    	return ('Session with ' + self.coachee.name + ' on ' + self.date + ' at ' + self.time)
+    	return ('Session with ' + self.coachee.name + ' on ' + str(self.date) + ' at ' + str(self.time))
 
 class Report_Session(models.Model):
-    coach = models.ForeignKey('Coach', null=True, blank=True, on_delete=models.SET_NULL)
-    session = models.ForeignKey('Session', null=True, blank=True, on_delete=models.SET_NULL)
-    hours_session = models.TimeField
+    coach = models.ForeignKey(Coach, null=True, blank=True, on_delete=models.SET_NULL)
+    hours_session = models.IntegerField()
     appointments = models.IntegerField()
 
     def __str__(self):
