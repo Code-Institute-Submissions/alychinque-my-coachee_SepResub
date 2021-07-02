@@ -1,10 +1,8 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views.generic import View, ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import *
 #from .forms import *
-from django.shortcuts import render, redirect, get_object_or_404, reverse
 
 class CoachCreate(CreateView):
     model = Coach
