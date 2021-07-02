@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'profiles',
     'bootstrap4',
     'indications',
+    'session',
 ]
 
 MIDDLEWARE = [
