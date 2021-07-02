@@ -32,7 +32,7 @@ class Coachee(models.Model):
         ("Other", "Other"),
     )
     gender = models.CharField(max_length=8, choices=list_gender, verbose_name='Gender')
-    list_indications = models.TextField()
+    list_indications = models.TextField(null=True, blank=True)
 
     def  __str__(self):
 	    return self.name
