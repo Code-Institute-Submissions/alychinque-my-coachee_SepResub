@@ -3,4 +3,3 @@ from .models import *
 
 
 admin.site.register(Session)
-admin.site.register(Report_Session)
