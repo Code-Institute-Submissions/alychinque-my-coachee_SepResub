@@ -42,11 +42,12 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'home',
+    'pages',
     'profiles',
     'bootstrap4',
     'indications',
     'session',
+    'bootstrap_datepicker_plus',
 ]
 
 MIDDLEWARE = [
@@ -169,3 +170,7 @@ EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
 #EMAIL_USE_SSL = False
+
+BOOTSTRAP4 = {
+    'include_jquery': True,
+}

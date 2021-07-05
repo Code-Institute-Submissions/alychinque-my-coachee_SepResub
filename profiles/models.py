@@ -3,9 +3,9 @@ from django.contrib.auth.models import User
 
 class Coach(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=50, verbose_name='Full Name')
-    date_of_birth = models.DateField(verbose_name='Date Of Birth')
-    phone_number = models.CharField(max_length=20)
+    name = models.CharField(max_length=50, verbose_name='Full Name', null=False, blank=False)
+    date_of_birth = models.DateField(verbose_name='Date Of Birth', null=False, blank=False)
+    phone_number = models.CharField(max_length=20, null=False, blank=False)
     list_gender = (
         ("male", "M"),
         ("female", "F"),
@@ -21,11 +21,11 @@ class Coach(models.Model):
 	    return self.name
 
 class Coachee(models.Model):
-    coach = models.ForeignKey('Coach', null=True, blank=True, on_delete=models.SET_NULL)
-    name = models.CharField(max_length=50, verbose_name='Full Name')
-    email = models.EmailField(max_length=254)
-    date_of_birth = models.DateField(verbose_name='Date Of Birth')
-    phone_number = models.CharField(max_length=20)
+    coach = models.ForeignKey(Coach, null=False, blank=False, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50, verbose_name='Full Name', null=False, blank=False)
+    email = models.EmailField(max_length=254, null=False, blank=False)
+    date_of_birth = models.DateField(verbose_name='Date Of Birth', null=False, blank=False)
+    phone_number = models.CharField(max_length=20, null=False, blank=False)
     list_gender = (
         ("male", "M"),
         ("female", "F"),

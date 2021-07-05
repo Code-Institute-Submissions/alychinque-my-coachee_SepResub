@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10 mt-5">
+        <h1 style="text-transform: uppercase;">Create Session</h1> <br>
+        <form action="" method="post" style="text-transform: uppercase;">
+            {% csrf_token %}
+
+            <p>
+                <label for="form-coachee">Choose a coachee</label>
+                <select class="form-select" name="form-coachee" id="form-coachee">
+                    {% for coachee in coachees %}
+                        <option value="{{coachee.name}}">{{coachee.name}}</option>
+                    {% endfor %}
+                </select>
+            </p>
+            <div>
+                <button class="btn btn-success btn-lg btn-block" type="submit"
+                    style="text-transform: uppercase;">Book a Session</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-1"></div>
+    <br>
+</div>
+
+{% endblock content %}

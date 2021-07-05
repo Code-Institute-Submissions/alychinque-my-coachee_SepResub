@@ -5,7 +5,7 @@ from django.core.mail import send_mail
 
 def index(request):
     """ A view to return the index page """
-    return render(request, 'home/index.html')
+    return render(request, 'pages/index.html')
 
 def contact(request):
     if request.method == 'POST':
@@ -21,18 +21,18 @@ def contact(request):
             email, #from email
             ['alychinque@gmail.com'], #to email
         )
-        return render(request, 'home/contact.html', {'name': name})
+        return render(request, 'pages/contact.html', {'name': name})
     else:
-        return render(request, 'home/contact.html', {})
+        return render(request, 'pages/contact.html', {})
 
 def about(request):
-    return render(request, 'home/about.html')
+    return render(request, 'pages/about.html')
 
 def pillars(request):
-    return render(request, 'home/pillars.html')
+    return render(request, 'pages/pillars.html')
 
 def plans(request):
-    return render(request, 'home/plans.html')
+    return render(request, 'pages/plans.html')
 
 def coach_page(request):
-    return render(request, 'home/coach_page.html')
+    return render(request, 'pages/coach_page.html')
