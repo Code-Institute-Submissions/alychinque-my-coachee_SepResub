@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import AppointmentSession, Coachee
+from .models import AppointmentSession, Coachee, Session
 from .forms import SessionForm
 from django.http.response import HttpResponse
 import json
@@ -69,3 +69,19 @@ def coach(request, coach):
     } for a in agenda]
     jsondict = json.dumps({'agenda': agenda})
     return HttpResponse(jsondict, content_type='application/json')
+
+
+def agenda(request):
+    coach = request.user.coach
+    agenda = AppointmentSession.objects.filter(coach=coach).order_by('time')
+    return render(request, 'session/agenda.html', context= { 'agenda': agenda })
+
+
+def agenda_show(request, id):
+    session_sessao = Session.objects.filter(appointment_session__id=id)
+    return render(request, 'session/agenda_show.html', context={ 'session': session_sessao})
+
+
+def agenda_edit(request, id):
+    
+    return render(request, 'session/agenda_edit.html', context={})

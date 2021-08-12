@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+
+<table style="width:100%">
+    <thead>
+        <th>Coachee</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Access</th>
+        <th>Edit</th>
+    </thead>
+    {% for ag in agenda %}
+    <tr>
+        <td>{{ ag.coachee }}</td>
+        <td>{{ ag.date }}</td>
+        <td>{{ ag.time }}</td>
+        <td><a href='{% url 'session:agenda-show' ag.id %}'>go session</a></td>
+        <td><a href='{% url 'session:agenda-edit' ag.id %}'>edit</a></td>
+        
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+{% endblock content %}
