@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views.generic import View, ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import *
-#from .forms import *
 
 class CoachCreate(CreateView):
     model = Coach
@@ -43,11 +42,15 @@ class CoacheeCreate(CreateView):
         return super(CoacheeCreate, self).form_valid(form)
 
 class CoacheeList(ListView):
-	model = Coach
-	template_name = "profiles/coachee_list.html"
-	context_object_name = 'coachees'
-	paginate_by = 10
-	queryset = Coachee.objects.all()
+    model = Coachee
+    template_name = "profiles/coachee_list.html"
+    context_object_name = 'coachees'
+    paginate_by = 10
+    
+    def get_queryset(self):
+        queryset = super(CoacheeList, self).get_queryset()
+        queryset = queryset.filter(coach=self.request.user.coach)
+        return queryset
 
 class CoacheeEdit(UpdateView):
 	model = Coachee
