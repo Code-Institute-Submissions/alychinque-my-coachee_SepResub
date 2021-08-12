@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10 mt-5">
+        <h1 style="text-transform: uppercase;">Create Session</h1> <br>
+        <form action="" method="POST" style="text-transform: uppercase;">
+            {% csrf_token %}
+
+            <div class="select-coachee">
+                <label for="form-coachee">Choose a coachee</label>
+                {{form.coachee}}
+            </div>
+            <div>
+                <label for="form-coachee">Date of the Session</label>
+                {{ form.date }}
+            </div>
+            <div>
+                <label for="form-coachee">Time of the Session</label>
+                {{ form.time }}
+            </div>
+            <div>
+                <button class="btn btn-success btn-lg btn-block" type="submit"
+                    style="text-transform: uppercase;">Book a Session</button>
+            </div>
+        </form>
+        <div id="user-times">
+            
+        </div>
+    </div>
+    <div class="col-1"></div>
+    <br>
+</div>
+
+{% endblock content %}
