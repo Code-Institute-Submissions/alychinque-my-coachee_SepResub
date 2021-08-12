@@ -1,47 +1,57 @@
 from django.shortcuts import render
-from .models import Session, Coachee
-from .forms import AppointmentSessionForm
+from .models import AppointmentSession, Coachee
+from .forms import SessionForm
 
 
-def session_create(request):
-    template_name = 'session/session_create.html'
-
-    if request.user.coach:
-	    coach = request.user.coach
-    else:
-	    msg = 'You do not have permission.' 
-	    context = {
-			'msg':msg,
-		}
-	    return render(request, 'template_msg.html', context)
-
+def session_date(request):
+    coach = request.user.coach
+    template_name = 'session/date.html'
     coachees = Coachee.objects.filter(coach=coach)
+    if request.method == "GET":
+        
+        if not coachees:
+            msg = 'You do not have coachees added.' 
+            context = {
+                'msg':msg,
+            }
+            return render(request, 'template_msg.html', context)
 
-    if not coachees:
-	    msg = 'You do not have coachees.' 
-	    context = {
-			'msg':msg,
-		}
-	    return render(request, 'template_msg.html', context)
-
-    if request.method == "POST":
-        session_data = {
-            'coach' : request.user.coach,
-            'coachee_name' : request.POST.get('coachee_name'),
-            'date' : request.POST.get('date'),
-            'time' : request.POST.get('time'),
+        form = SessionForm(coachees = coachees)
+        context = {
+            'form': form,
+            'id': coach.id
         }
-        session_form = AppointmentSessionForm(session_data)
-        if session_form.is_valid():
-            session_form.save()
-        coachee = Coachee.objects.get(name=request.POST.get('coachee_name'))
-        if not Session.objects.filter(coach=coach, coachee=coachee).exists():
-            session = 1
-        else:
-            session = Session.objects.filter(coach=coach, coachee=coachee).count() + 1
-	    
-    context = {
-		'coachees':coachees,
-    }
+        
+    
+    if request.method == "POST":
+        form = SessionForm(request.POST, coachees=coachees)
+        
+        if form.is_valid():
+            coachee = request.POST.get('coachee')
+            date = request.POST.get('date')
+            sessionNumber = 1
+            sessionInstance = AppointmentSession.objects.filter(coach=coach, coachee=coachee).order_by('-id').first()
+            if sessionInstance:
+                sessionNumber = sessionInstance.number_session + 1
 
+            appointmentSession = AppointmentSession()
+            appointmentSession.coach = coach
+            appointmentSession.coachee = Coachee.objects.filter(id=coachee).first()
+            appointmentSession.number_session = sessionNumber
+            appointmentSession.date = date
+            appointmentSession.time = request.POST.get('time')
+            appointmentSession.save()
+
+            template_name = 'pages/coach_page.html'
+            context = {
+                'coachee': coachee,
+                'date': date,
+                'msg': 'Appointment booked'
+            }
+        else:
+            context = {
+            'form': form,
+            'id': coach.id
+            }
     return render(request, template_name, context)
+
