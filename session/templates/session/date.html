@@ -36,3 +36,34 @@
 </div>
 
 {% endblock content %}
+
+{% block postloadjs %}
+<script>
+    function changeDate(){
+        const input = document.getElementById('id_date');
+        const id = {{ id }};
+        input.addEventListener('change', async function(event){
+            const response = await fetch(`http://127.0.0.1:8000/session/${id}/?date=${event.target.value}`)
+            const json = await response.json()
+            var html = `<table style="width:100%">
+                            <thead>
+                                <th>Coachee</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                            </thead>`;
+            json.agenda.map(function(ag){
+                html += `<tr>
+                            <td>${ag.coachee}</td>
+                            <td>${ag.date}</td>
+                            <td>${ag.time}</td>
+                        </tr>`;
+            })
+            html += '</table>'
+            document.getElementById('user-times').innerHTML = html;         
+        })
+    }
+    document.addEventListener('DOMContentLoaded', function(){
+        changeDate()
+    })
+</script>
+{% endblock postloadjs %}

@@ -6,4 +6,5 @@ app_name = 'session'
 
 urlpatterns = [
     path('date/', views.session_date, name='session'),
+    path('<int:coach>/', views.coach, name='coach'),
 ]

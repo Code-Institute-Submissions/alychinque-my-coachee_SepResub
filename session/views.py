@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import AppointmentSession, Coachee
 from .forms import SessionForm
+from django.http.response import HttpResponse
+import json
 
 
 def session_date(request):
@@ -55,3 +57,15 @@ def session_date(request):
             }
     return render(request, template_name, context)
 
+
+def coach(request, coach):
+    agenda = AppointmentSession.objects.filter(coach=coach, date=request.GET.get('date', None)).order_by('time')
+    agenda = [{
+        'id': a.id,
+        'coachee': a.coachee.name,
+        'number_session': a.number_session,
+        'date': a.date.strftime('%d/%m/%Y'),
+        'time': a.time.strftime('%H:%M'),
+    } for a in agenda]
+    jsondict = json.dumps({'agenda': agenda})
+    return HttpResponse(jsondict, content_type='application/json')
