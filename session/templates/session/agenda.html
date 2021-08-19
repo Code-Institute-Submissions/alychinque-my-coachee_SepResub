@@ -10,6 +10,7 @@
         <th>Time</th>
         <th>Access</th>
         <th>Edit</th>
+        <th>Delete</th>
     </thead>
     {% for ag in agenda %}
     <tr>
@@ -17,8 +18,8 @@
         <td>{{ ag.date }}</td>
         <td>{{ ag.time }}</td>
         <td><a href='{% url 'session:agenda-show' ag.id %}'>go session</a></td>
-        <td><a href='{% url 'session:agenda-edit' ag.id %}'>edit</a></td>
-        
+        <td><a href='{% url 'session:date-edit' ag.id %}'>edit</a></td>
+        <td><a href='{% url 'session:date-delete' ag.id %}'>delete</a></td>
     </tr>
     {% endfor %}
 </table>

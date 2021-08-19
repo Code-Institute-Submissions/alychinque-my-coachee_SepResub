@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10 mt-5">
+        <h1 style="text-transform: uppercase;">Edit Session</h1> <br>
+        <form action="" method="POST" style="text-transform: uppercase;">
+            {% csrf_token %}
+
+            {% for ag in agenda %}
+            <div class="select-coachee">
+                <label for="form-coachee">Choose a coachee</label>
+                {{form.coachee}}
+                <br>
+                <small>previous: {{ ag.coachee }}</small>
+            </div>
+            <hr>
+            <div>
+                <label for="form-coachee">Date of the Session</label>
+                {{ form.date }}
+                <br>
+                <small>previous: {{ ag.date }}</small>
+            </div>
+            <hr>
+            <div>
+                <label for="form-coachee">Time of the Session</label>
+                {{ form.time }}
+                <br>
+                <small>previous: {{ ag.time }}</small>
+            </div>
+            {% endfor %}
+            <div>
+                <button class="btn btn-success btn-lg btn-block" type="submit"
+                    style="text-transform: uppercase;">Book a Session</button>
+            </div>
+        </form>
+        <div id="user-times">
+            
+        </div>
+    </div>
+    <div class="col-1"></div>
+    <br>
+</div>
+
+{% endblock content %}
+
+{% block postloadjs %}
+<script>
+    function changeDate(){
+        const input = document.getElementById('id_date');
+        const id = {{ id }};
+        input.addEventListener('change', async function(event){
+            const response = await fetch(`http://127.0.0.1:8000/session/${id}/?date=${event.target.value}`)
+            const json = await response.json()
+            var html = `<table style="width:100%">
+                            <thead>
+                                <th>Coachee</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                            </thead>`;
+            json.agenda.map(function(ag){
+                html += `<tr>
+                            <td>${ag.coachee}</td>
+                            <td>${ag.date}</td>
+                            <td>${ag.time}</td>
+                        </tr>`;
+            })
+            html += '</table>'
+            document.getElementById('user-times').innerHTML = html;         
+        })
+    }
+    document.addEventListener('DOMContentLoaded', function(){
+        changeDate()
+    })
+</script>
+{% endblock postloadjs %}
