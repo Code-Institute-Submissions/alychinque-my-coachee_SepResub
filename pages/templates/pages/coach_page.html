@@ -4,21 +4,22 @@
 
 
 {% block content %}
+{% if request.user.coach %}
 
 <h1 class="mt-5">Coach Page</h1>
 
-<div class="container-fluid">
+<div class="container-fluid mt-5">
     <div class="row">
-        <div class="col">
+        <div class="col text-center">
             <a href="{% url 'profiles:coachee_list' %}">Coachees</a>
         </div>
-        <div class="col">
+        <div class="col text-center">
             <a href="{% url 'session:session' %}">Book Session</a>
         </div>
-        <div class="col">
+        <div class="col text-center">
             <a href="{% url 'profiles:coachee_create' %}">Add Coachee</a>
         </div>
-        <div class="col">
+        <div class="col text-center">
             <a href="">Indications</a>
         </div>
     </div>
@@ -26,20 +27,24 @@
     <hr>
     <br>
     <div class="row">
-        <div class="col">
+        <div class="col text-center">
             <a href="{% url 'session:agenda-coach' %}">Agenda</a>
         </div>
-        <div class="col">
+        <div class="col text-center">
             <a href="">Report</a>
         </div>
-        <div class="col">
+        <div class="col text-center">
             <a href="">Blog</a>
         </div>
-        <div class="col">
+        <div class="col text-center">
             <a href="{% url 'contact' %}">Contact</a>
         </div>
     </div>
     </div>
 </div>
+{% else %}
+<h2>You Do Not Have Permission</h2>
+<h3>Choose a <a href="{% url 'plans' %}">plan</a></h3>
+{% endif %}
 
 {% endblock %}

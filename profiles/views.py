@@ -8,7 +8,7 @@ class CoachCreate(CreateView):
     fields = [
         'name', 'date_of_birth', 'phone_number', 'gender'
     ]
-    success_url = "/"
+    success_url = "/coach_page/"
     template_name = "profiles/coach_create.html"
 
     def form_valid(self, form):
@@ -24,8 +24,6 @@ class CoachList(ListView):
 	paginate_by = 10
 	queryset = Coach.objects.all()
 
-#view delete
-#view update
 
 class CoacheeCreate(CreateView):
     model = Coachee

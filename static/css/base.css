@@ -208,6 +208,12 @@ main {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+.container .card:nth-child(4) .box .content a,
+.container .card:nth-child(4) .box .content .icon {
+    background: #ec8d10;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
 .contact-header {
     padding-top: 3rem;
 }
