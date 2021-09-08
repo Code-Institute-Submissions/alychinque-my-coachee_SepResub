@@ -89,16 +89,16 @@ main {
     background-color: rgba(26, 188, 156, 0.9);
 }
 
-.container {
+.container-plan {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    max-width: 1200px;
+    max-width: 1520px;
     padding: 100px 0 50px;
 }
 
-.container .card {
+.container-plan .card {
     position: relative;
     min-width: 320px;
     height: 500px;
@@ -108,7 +108,7 @@ main {
     margin: 30px;
 }
 
-.container .card .box {
+.container-plan .card .box {
     position: absolute;
     top: 20px;
     left: 20px;
@@ -123,17 +123,17 @@ main {
     align-items: center;
 }
 
-.container .card:hover .box {
+.container-plan .card:hover .box {
     transform: translateY(-50px);
     box-shadow: 0 40px 70px rgba(0, 0, 0, 0.5);
 }
 
-.container .card .box .content {
+.container-plan .card .box .content {
     padding: 20px;
     text-align: center;
 }
 
-.container .card .box .content .icon {
+.container-plan .card .box .content .icon {
     position: relative;
     width: 80px;
     height: 80px;
@@ -146,40 +146,40 @@ main {
     margin-bottom: 10px;
 }
 
-.container .card .box .content .icon .svg-inline--fa {
+.container-plan .card .box .content .icon .svg-inline--fa {
     color: #fff;
     font-size: 2em;
 }
 
-.container .card .box .content h3 {
+.container-plan .card .box .content h3 {
     font-size: 1.8em;
     color: white;
     font-weight: 300;
 }
 
-.container .card .box .content h4 {
+.container-plan .card .box .content h4 {
     color: #fff;
     font-size: 3em;
     font-weight: 700;
 }
 
-.container .card .box .content ul {
+.container-plan .card .box .content ul {
     position: relative;
     justify-content: center;
     padding: 0;
 }
 
-.container .card .box .content ul li {
+.container-plan .card .box .content ul li {
     list-style: none;
     color: #fff;
     margin: 5px 0;
 }
 
-.container .card .box .content ul li .fa-check {
+.container-plan .card .box .content ul li .fa-check {
     color: #0f0;
 }
 
-.container .card .box .content a {
+.container-plan .card .box .content a {
     position: relative;
     display: inline-block;
     padding: 8px 20px;
@@ -190,26 +190,26 @@ main {
     font-weight: 400;
 }
 
-.container .card:nth-child(1) .box .content a,
-.container .card:nth-child(1) .box .content .icon {
+.container-plan .card:nth-child(1) .box .content a,
+.container-plan .card:nth-child(1) .box .content .icon {
     background: #ed6464;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.container .card:nth-child(2) .box .content a,
-.container .card:nth-child(2) .box .content .icon {
+.container-plan .card:nth-child(2) .box .content a,
+.container-plan .card:nth-child(2) .box .content .icon {
     background: #8bf76d;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.container .card:nth-child(3) .box .content a,
-.container .card:nth-child(3) .box .content .icon {
+.container-plan .card:nth-child(3) .box .content a,
+.container-plan .card:nth-child(3) .box .content .icon {
     background: #eded64;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.container .card:nth-child(4) .box .content a,
-.container .card:nth-child(4) .box .content .icon {
+.container-plan .card:nth-child(4) .box .content a,
+.container-plan .card:nth-child(4) .box .content .icon {
     background: #ec8d10;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
