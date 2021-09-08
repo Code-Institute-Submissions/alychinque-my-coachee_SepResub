@@ -12,6 +12,13 @@ class Coach(models.Model):
         ("Other", "Other"),
     )
     gender = models.CharField(max_length=8, choices=list_gender, verbose_name='Gender')
+    list_plans = {
+        ('Premium', 'premium'),
+        ('Standard', 'standard'),
+        ('Basic', 'basic'),
+        ('Free', 'free')
+    }
+    plan = models.CharField(max_length=10, null=False, blank=False, choices=list_plans, default='free')
 
     class Meta:
         verbose_name = 'Coach'
