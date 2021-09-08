@@ -26,4 +26,4 @@ class SessionForm(forms.ModelForm):
         coachees = kwargs['coachees']
         kwargs.pop('coachees')
         super().__init__(*args, **kwargs)
-        self.fields['coachee'].queryset=coachees   
+        self.fields['coachee'].queryset=coachees
