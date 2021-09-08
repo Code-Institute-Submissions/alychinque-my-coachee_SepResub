@@ -4,16 +4,44 @@
 
 {% load bootstrap4 %}
 
-{% block content %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
+{% endblock %}
 
+
+{% block content %}
+{% if request.user.coach %}
+<h2>You Do Not Have Permission</h2>
+{% else %}
 <div class="row">
     <div class="col-1"></div>
     <div class="col-10 mt-5">
-        <h1 style="text-transform: uppercase;">Create Coach</h1> <br>
-        <form action="" method="post" style="text-transform: uppercase;">
+        <h1 style="text-transform: uppercase;">Create Coach - Plan {{ plan }}</h1> <br>
+        <form action="{% url 'profiles:coach_create'  %}" method="POST" style="text-transform: uppercase;" id="payment-form">
             {% csrf_token %}
-            {% bootstrap_form form %}
-            {{ form.media }}
+            
+            <fieldset class="rounded px-3 mb-5">
+                <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+                {{ form.name | as_crispy_field }}
+                <br>
+                {{ form.date_of_birth | as_crispy_field }}
+                <br>
+                {{ form.phone_number | as_crispy_field }}
+                <br>
+                {{ form.gender | as_crispy_field }}
+                <br>
+                {{ form.plan | as_crispy_field }}
+            </fieldset>
+
+            <fieldset class="px-3">
+                <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+                <!-- A Stripe card element will go here -->
+                <div class="mb-3" id="card-element"></div>
+                <!-- Used to display form errors -->
+                <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                <!-- Pass the client secret to the view so we can get the payment intent id -->
+                <input type="hidden" value="{{ client_secret }}" name="client_secret">
+            </fieldset>
             <div>
                 <button class="btn btn-success btn-lg btn-block" type="submit"
                     style="text-transform: uppercase;">Create</button>
@@ -23,5 +51,13 @@
     <div class="col-1"></div>
     <br>
 </div>
+{% endif %}
 
 {% endblock content %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'profiles/js/stripe_elements.js' %}"></script>
+{% endblock %}

@@ -2,20 +2,31 @@ from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views.generic import View, ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import *
+from .forms import CoachForm
+from django.conf import settings
 
-class CoachCreate(CreateView):
-    model = Coach
-    fields = [
-        'name', 'date_of_birth', 'phone_number', 'gender'
-    ]
-    success_url = "/coach_page/"
+
+def coach_create(request):
     template_name = "profiles/coach_create.html"
+    if request.method == "POST":
+        form = CoachForm(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.user = request.user
+            form.save()
+            context = {
+                'form': form
+            }
+            return redirect('coach_page')
+    else:
+        form = CoachForm()
+        context = {
+            'form': form,
+            'stripe_public_key': settings.STRIPE_PUBLIC_KEY,
+            'client_secret': settings.STRIPE_SECRET_KEY,
+        }
+    return render(request, template_name, context)
 
-    def form_valid(self, form):
-        instance = form.save(commit=False)
-        instance.user = self.request.user
-        instance.save()
-        return super(CoachCreate, self).form_valid(form)
 
 class CoachList(ListView):
 	model = Coach
