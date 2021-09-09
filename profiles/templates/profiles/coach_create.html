@@ -16,31 +16,41 @@
 <div class="row">
     <div class="col-1"></div>
     <div class="jumbotron col-10 mt-5">
-        <h1 style="text-transform: uppercase;">Create Coach - Plan {{ order.plan }}</h1> <br>
+        <h1 style="text-transform: uppercase;">Create Coach - Plan {{ order.plan }} /h1> <br>
         
         <form action="{% url 'profiles:coach_create' plan=order.plan price=order.price %}" method="POST" style="text-transform: uppercase;" id="payment-form">
         
             {% csrf_token %}
             
-            <fieldset class="rounded px-3 mb-5">
-                <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+            <fieldset class="rounded px-3">
                 {{ form.name | as_crispy_field }}
-                <br>
+                
                 {{ form.date_of_birth | as_crispy_field }}
-                <br>
+                
                 {{ form.phone_number | as_crispy_field }}
-                <br>
+                
                 {{ form.gender | as_crispy_field }}
-                <br>
-                <label for="id_gender" class=" requiredField">
-                    plan selected
-                </label>
-                <br>
-                <h3 >{{ order.plan }} Price €<span id="price">{{ order.price }}</span></h3>
+                <div id="div_id_plan" class="form-group">
+                    <label for="id_plan" class=" requiredField">
+                        plan selected
+                    </label>
+                    <div class="">
+                        <input type="text" name="plan" value="{{ order.plan }}" class="stripe-style-input dateinput form-control" required="" id="plan" disabled>
+                    </div>
+                </div>
+                <div id="div_id_plan" class="form-group">
+                    <label for="id_price" class=" requiredField">
+                        price
+                    </label>
+                    <div class="">
+                        <input type="number" name="price" value="{{ order.price }}" class="stripe-style-input dateinput form-control" required="" id="price" disabled>
+                    </div>
+                </div>
             </fieldset>
+            <br>
             {% if plan == 'free' %}
             {% else %}
-            <fieldset class="px-3">
+            <fieldset class="">
                 <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
                 <!-- A Stripe card element will go here -->
                 <div class="mb-3" id="card-element"></div>
@@ -51,7 +61,7 @@
             </fieldset>
             {% endif %}
             <div>
-                <button id="submit-button" class="btn btn-success btn-lg btn-block mt-5" type="submit"
+                <button id="submit-button" class="btn btn-success btn-lg btn-block" type="submit"
                     style="text-transform: uppercase;">Create</button>
             </div>
         </form>

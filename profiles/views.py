@@ -18,17 +18,15 @@ def coach_create(request, plan, price):
         amount=stripe_total,
         currency=settings.STRIPE_CURRENCY,
     )
+    profile = get_object_or_404(Coach, user=request.user)
     if request.method == "POST":
-        form = CoachForm(request.POST)
-        print('entra aqui?')
-
+        form = CoachForm(request.POST, instance=profile)
         if form.is_valid():
             form = form.save(commit=False)
-            form.user = request.user
             form.save()
             return redirect('coach_page')
         else:
-            print('nao valida')
+            print('fail')
     form = CoachForm()
     order = {
         'plan': plan,
@@ -40,7 +38,6 @@ def coach_create(request, plan, price):
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
     }
-    print('passa aqui?')
     template_name = "profiles/coach_create.html"
     return render(request, template_name, context)
 

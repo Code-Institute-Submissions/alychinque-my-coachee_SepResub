@@ -19,6 +19,7 @@ class Coach(models.Model):
         ('Free', 'free')
     }
     plan = models.CharField(max_length=10, null=False, blank=False, choices=list_plans, default='free')
+    price = models.DecimalField(decimal_places=10, max_digits=10, default=0)
 
     class Meta:
         verbose_name = 'Coach'
