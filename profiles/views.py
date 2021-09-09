@@ -4,27 +4,44 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import *
 from .forms import CoachForm
 from django.conf import settings
+import stripe
 
 
-def coach_create(request):
-    template_name = "profiles/coach_create.html"
+def coach_create(request, plan, price):
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
+
+    total = price
+    stripe_total = round(int(total) * 100)
+    stripe.api_key = stripe_secret_key
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+    )
     if request.method == "POST":
         form = CoachForm(request.POST)
+        print('entra aqui?')
+
         if form.is_valid():
             form = form.save(commit=False)
             form.user = request.user
             form.save()
-            context = {
-                'form': form
-            }
             return redirect('coach_page')
-    else:
-        form = CoachForm()
-        context = {
-            'form': form,
-            'stripe_public_key': settings.STRIPE_PUBLIC_KEY,
-            'client_secret': settings.STRIPE_SECRET_KEY,
-        }
+        else:
+            print('nao valida')
+    form = CoachForm()
+    order = {
+        'plan': plan,
+        'price': price,
+    }
+    context = {
+        'form': form,
+        'order': order,
+        'stripe_public_key': stripe_public_key,
+        'client_secret': intent.client_secret,
+    }
+    print('passa aqui?')
+    template_name = "profiles/coach_create.html"
     return render(request, template_name, context)
 
 

@@ -15,9 +15,11 @@
 {% else %}
 <div class="row">
     <div class="col-1"></div>
-    <div class="col-10 mt-5">
-        <h1 style="text-transform: uppercase;">Create Coach - Plan {{ plan }}</h1> <br>
-        <form action="{% url 'profiles:coach_create'  %}" method="POST" style="text-transform: uppercase;" id="payment-form">
+    <div class="jumbotron col-10 mt-5">
+        <h1 style="text-transform: uppercase;">Create Coach - Plan {{ order.plan }}</h1> <br>
+        
+        <form action="{% url 'profiles:coach_create' plan=order.plan price=order.price %}" method="POST" style="text-transform: uppercase;" id="payment-form">
+        
             {% csrf_token %}
             
             <fieldset class="rounded px-3 mb-5">
@@ -30,9 +32,14 @@
                 <br>
                 {{ form.gender | as_crispy_field }}
                 <br>
-                {{ form.plan | as_crispy_field }}
+                <label for="id_gender" class=" requiredField">
+                    plan selected
+                </label>
+                <br>
+                <h3 >{{ order.plan }} Price €<span id="price">{{ order.price }}</span></h3>
             </fieldset>
-
+            {% if plan == 'free' %}
+            {% else %}
             <fieldset class="px-3">
                 <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
                 <!-- A Stripe card element will go here -->
@@ -42,8 +49,9 @@
                 <!-- Pass the client secret to the view so we can get the payment intent id -->
                 <input type="hidden" value="{{ client_secret }}" name="client_secret">
             </fieldset>
+            {% endif %}
             <div>
-                <button class="btn btn-success btn-lg btn-block" type="submit"
+                <button id="submit-button" class="btn btn-success btn-lg btn-block mt-5" type="submit"
                     style="text-transform: uppercase;">Create</button>
             </div>
         </form>
