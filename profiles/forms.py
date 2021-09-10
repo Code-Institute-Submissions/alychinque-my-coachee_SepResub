@@ -10,7 +10,7 @@ class CoachForm(forms.ModelForm):
     
     class Meta:
         model = Coach
-        fields = ('name', 'date_of_birth', 'phone_number', 'gender', 'plan')
+        exclude = ('user', 'plan', 'price')
 
         widgets = {
             'date_of_birth': forms.DateInput(attrs={'type': 'date'})
@@ -27,8 +27,6 @@ class CoachForm(forms.ModelForm):
             'date_of_birth': 'Date Of Birth',
             'phone_number': 'Phone Number',
             'gender': 'Gender',
-            'plan': 'Plan',
-            
         }
 
         self.fields['name'].widget.attrs['autofocus'] = True

@@ -4,42 +4,57 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import *
 from .forms import CoachForm
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 import stripe
 
 
+@login_required
 def coach_create(request, plan, price):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-
-    total = price
-    stripe_total = round(int(total) * 100)
-    stripe.api_key = stripe_secret_key
-    intent = stripe.PaymentIntent.create(
-        amount=stripe_total,
-        currency=settings.STRIPE_CURRENCY,
-    )
-    profile = get_object_or_404(Coach, user=request.user)
+    print(plan)
+    if plan != 'Free':
+        total = price
+        stripe_total = round(int(total) * 100)
+        stripe.api_key = stripe_secret_key
+        intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY,
+        )
+        
     if request.method == "POST":
-        form = CoachForm(request.POST, instance=profile)
+        form = CoachForm(request.POST)
+        print(form.errors)
         if form.is_valid():
             form = form.save(commit=False)
+            form.user = request.user
+            form.plan = plan.capitalize()
+            form.price = int(price)
             form.save()
             return redirect('coach_page')
         else:
             print('fail')
-    form = CoachForm()
-    order = {
-        'plan': plan,
-        'price': price,
-    }
-    context = {
-        'form': form,
-        'order': order,
-        'stripe_public_key': stripe_public_key,
-        'client_secret': intent.client_secret,
-    }
-    template_name = "profiles/coach_create.html"
-    return render(request, template_name, context)
+    else:
+
+        form = CoachForm()
+        order = {
+            'plan': plan,
+            'price': price,
+        }
+        if plan != 'Free':
+            context = {
+                'form': form,
+                'order': order,
+                'stripe_public_key': stripe_public_key,
+                'client_secret': intent.client_secret,
+            }
+        else:
+            context = {
+                'form': form,
+                'order': order,
+            }
+        template_name = "profiles/coach_create.html"
+        return render(request, template_name, context)
 
 
 class CoachList(ListView):

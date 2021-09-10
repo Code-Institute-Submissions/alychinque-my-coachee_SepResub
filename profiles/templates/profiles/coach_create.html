@@ -16,7 +16,7 @@
 <div class="row">
     <div class="col-1"></div>
     <div class="jumbotron col-10 mt-5">
-        <h1 style="text-transform: uppercase;">Create Coach - Plan {{ order.plan }} /h1> <br>
+        <h1 style="text-transform: uppercase;">Create Coach - Plan {{ order.plan }} - €{{ order.price }}</h1> <br>
         
         <form action="{% url 'profiles:coach_create' plan=order.plan price=order.price %}" method="POST" style="text-transform: uppercase;" id="payment-form">
         
@@ -30,25 +30,10 @@
                 {{ form.phone_number | as_crispy_field }}
                 
                 {{ form.gender | as_crispy_field }}
-                <div id="div_id_plan" class="form-group">
-                    <label for="id_plan" class=" requiredField">
-                        plan selected
-                    </label>
-                    <div class="">
-                        <input type="text" name="plan" value="{{ order.plan }}" class="stripe-style-input dateinput form-control" required="" id="plan" disabled>
-                    </div>
-                </div>
-                <div id="div_id_plan" class="form-group">
-                    <label for="id_price" class=" requiredField">
-                        price
-                    </label>
-                    <div class="">
-                        <input type="number" name="price" value="{{ order.price }}" class="stripe-style-input dateinput form-control" required="" id="price" disabled>
-                    </div>
-                </div>
+                
             </fieldset>
             <br>
-            {% if plan == 'free' %}
+            {% if plan == 'Free' %}
             {% else %}
             <fieldset class="">
                 <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>

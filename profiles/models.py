@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 class Coach(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -18,8 +20,8 @@ class Coach(models.Model):
         ('Basic', 'basic'),
         ('Free', 'free')
     }
-    plan = models.CharField(max_length=10, null=False, blank=False, choices=list_plans, default='free')
-    price = models.DecimalField(decimal_places=10, max_digits=10, default=0)
+    plan = models.CharField(max_length=10, null=False, blank=False, choices=list_plans)
+    price = models.DecimalField(decimal_places=0, max_digits=10)
 
     class Meta:
         verbose_name = 'Coach'
@@ -27,6 +29,7 @@ class Coach(models.Model):
 
     def  __str__(self):
 	    return self.name
+
 
 class Coachee(models.Model):
     coach = models.ForeignKey(Coach, null=False, blank=False, on_delete=models.CASCADE)
