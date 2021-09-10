@@ -1,1 +1,1 @@
-web: gunicorn my_coachee.wsgi:application
+web: gunicorn my-coachee.wsgi:application
