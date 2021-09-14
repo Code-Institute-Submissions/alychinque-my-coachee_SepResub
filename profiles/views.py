@@ -70,7 +70,7 @@ class CoacheeCreate(CreateView):
     fields = [
         'name', 'email', 'date_of_birth', 'phone_number', 'gender'
     ]
-    success_url = "/"
+    success_url = "/coach_page/"
     template_name = "profiles/coachee_create.html"
 
     def form_valid(self, form):
