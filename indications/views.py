@@ -16,3 +16,15 @@ class IndicationList(ListView):
 	context_object_name = 'indications'
 	paginate_by = 10
 	queryset = Indication.objects.all()
+
+class IndicationEdit(UpdateView):
+	model = Indication
+	fields = ['title', 'description', 'category']
+	template_name = 'indications/indication_edit.html'
+	success_url = '/indications/indication_list/'
+
+
+class IndicationDelete(DeleteView):
+	model = Indication
+	template_name = 'indications/indication_delete.html'
+	success_url = '/indications/indication_list/'
