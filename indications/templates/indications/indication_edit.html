@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-1"></div>
+    <br>
+    <br>
+    <br>
+    <div class="col-10 mt-5">
+        <h1 style="text-transform: uppercase;">Edit Indication</h1> <br>
+        <form action="" method="post" style="text-transform: uppercase;">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {{ form.media }}
+            <div>
+                <button class="btn btn-success btn-lg btn-block" type="submit"
+                    style="text-transform: uppercase;">Edit Indication</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-1"></div>
+    <br>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-1"></div>
+    <br>
+    <br>
+    <br>
+    <div class="col-10 mt-5">
+        <h1 style="text-transform: uppercase;">Delete Indication</h1> <br>
+        <form action="" method="post" style="text-transform: uppercase;">
+            {% csrf_token %}
+            {<h2>Are you sure you want to delete <br>
+                "{{ object }}" ?</h2>
+            <div>
+                <button class="btn btn-success btn-lg btn-block" type="submit"
+                    style="text-transform: uppercase;">Delete</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-1"></div>
+    <br>
+</div>
+
+{% endblock content %}
