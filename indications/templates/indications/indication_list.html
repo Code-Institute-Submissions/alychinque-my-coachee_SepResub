@@ -31,8 +31,6 @@
 					<td>{{ indication.title }} </td>
 					<td>{{ indication.description }}</td>
 					<td>{{ indication.category }}</td>
-					<td>{{ coachee.date_of_birth }}</td>
-					<td>{{ coachee.gender}}</td>
 					<td><a href="{% url 'indications:indication_edit' pk=indication.pk %}">edit</a></td>
 					<td><a href="{% url 'indications:indication_delete' pk=indication.pk %}">delete</a></td>
 				</tr>
