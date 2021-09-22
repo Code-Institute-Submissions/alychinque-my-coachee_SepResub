@@ -16,6 +16,7 @@ class IndicationList(ListView):
 	context_object_name = 'indications'
 	paginate_by = 10
 	queryset = Indication.objects.all()
+	ordering = ['id']
 
 class IndicationEdit(UpdateView):
 	model = Indication
