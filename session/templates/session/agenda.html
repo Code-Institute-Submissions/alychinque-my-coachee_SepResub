@@ -3,6 +3,10 @@
 {% load bootstrap4 %}
 {% block content %}
 
+{% if not agenda %}
+<div class="text-center mt-5">
+    <h2>You Do Not Have a session. <a href="{% url 'session:session_date' %}">Book a Session</a></h2>
+{% else %}
 <table style="width:100%">
     <thead>
         <th>Coachee</th>
@@ -17,13 +21,13 @@
         <td>{{ ag.coachee }}</td>
         <td>{{ ag.date }}</td>
         <td>{{ ag.time }}</td>
-        <td><a href='{% url 'session:agenda-show' ag.id %}'>go session</a></td>
-        <td><a href='{% url 'session:date-edit' ag.id %}'>edit</a></td>
-        <td><a href='{% url 'session:date-delete' ag.id %}'>delete</a></td>
+        <td><a href="{% url 'session:agenda_show' ag.id %}">go session</a></td>
+        <td><a href="{% url 'session:date_edit' ag.id %}">edit</a></td>
+        <td><a href="{% url 'session:date_delete' ag.id %}">delete</a></td>
     </tr>
     {% endfor %}
 </table>
-
+{% endif %}
 
 
 {% endblock content %}
