@@ -11,15 +11,11 @@ def session_date(request):
     coachees = Coachee.objects.filter(coach=coach)
     if request.method == "GET":
         
-        if not coachees:
-            msg = 'You do not have coachees added.' 
-            context = {
-                'msg':msg,
-            }
-            return render(request, 'template_msg.html', context)
+       
 
         form = SessionForm(coachees = coachees)
         context = {
+            'coachee': '',
             'form': form,
             'id': coach.id
         }
