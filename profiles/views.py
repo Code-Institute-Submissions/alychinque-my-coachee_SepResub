@@ -12,7 +12,6 @@ import stripe
 def coach_create(request, plan, price):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-    print(plan)
     if plan != 'Free':
         total = price
         stripe_total = round(int(total) * 100)
@@ -24,7 +23,6 @@ def coach_create(request, plan, price):
         
     if request.method == "POST":
         form = CoachForm(request.POST)
-        print(form.errors)
         if form.is_valid():
             form = form.save(commit=False)
             form.user = request.user
