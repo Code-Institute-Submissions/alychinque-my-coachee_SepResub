@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load bootstrap4 %}
-
-
 {% block content %}
-<br>
-<br> 
-<br>
+
+{% if not coachees %}
+<div class="text-center mt-5">
+    <h2>There are not Coachees Added. <a href="{% url 'profiles:coachee_create' %}">Add a Coachee</a></h2>
+{% else %}
 <section class="table-section text-center">
 	<div class="table-responsive">
 		<table id="manager_table" class="table display responsive">
@@ -38,9 +38,6 @@
 					<td><a href="{% url 'profiles:coachee_edit' pk=coachee.pk %}">edit</a></td>
 					<td><a href="{% url 'profiles:coachee_delete' pk=coachee.pk %}">delete</a></td>
 				</tr>
-
-			{% empty %}
-				<h3>There are not Coaches Added.</h3>
 			{% endfor %}	
 			</tbody>
 		</table>
@@ -50,26 +47,23 @@
 </section>
 
 <div class="pagination">
-    <span class="step-links">
-        {% if page_obj.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+	<span class="step-links">
+		{% if page_obj.has_previous %}
+		<a href="?page=1">&laquo; first</a>
+		<a href="?page={{ page_obj.previous_page_number }}">previous</a>
         {% endif %}
-
+		
         <span class="current">
-            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+			Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
         </span>
-
+		
         {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">next</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+		<a href="?page={{ page_obj.next_page_number }}">next</a>
+		<a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
         {% endif %}
     </span>
 </div>
-
-<br>
-<br>
-
+{% endif %}
 {% endblock %}
 
 
