@@ -12,7 +12,14 @@ class Indication(models.Model):
     )
     category = models.CharField(max_length=30, choices=list_category, 
                                 verbose_name='Category', null=False, blank=False) 
-			
+    list_plans = {
+        ('Premium', 'Premium'),
+        ('Standard', 'Standard'),
+        ('Basic', 'Basic'),
+        ('Free', 'Free')
+    }
+    plan = models.CharField(max_length=10, null=False, blank=False, choices=list_plans)
+
     def __str__(self):
     	return self.title
 

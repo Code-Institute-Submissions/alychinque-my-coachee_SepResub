@@ -15,10 +15,10 @@ class Coach(models.Model):
     )
     gender = models.CharField(max_length=8, choices=list_gender, verbose_name='Gender')
     list_plans = {
-        ('Premium', 'premium'),
-        ('Standard', 'standard'),
-        ('Basic', 'basic'),
-        ('Free', 'free')
+        ('Premium', 'Premium'),
+        ('Standard', 'Standard'),
+        ('Basic', 'Basic'),
+        ('Free', 'Free')
     }
     plan = models.CharField(max_length=10, null=False, blank=False, choices=list_plans)
     price = models.DecimalField(decimal_places=0, max_digits=10)

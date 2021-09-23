@@ -15,8 +15,12 @@ class IndicationList(ListView):
 	template_name = "indications/indication_list.html"
 	context_object_name = 'indications'
 	paginate_by = 10
-	queryset = Indication.objects.all()
 	ordering = ['id']
+
+	def get_queryset(self):
+		queryset = super(IndicationList, self).get_queryset()
+		queryset = queryset.filter(plan=self.request.user.coach.plan)
+		return queryset
 
 class IndicationEdit(UpdateView):
 	model = Indication

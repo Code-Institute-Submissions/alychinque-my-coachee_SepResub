@@ -5,7 +5,8 @@
         "fields":{
             "title":"movie 1",
             "description":"Description movie 1",
-            "category":"Movie"
+            "category":"Movie",
+            "plan":"Premium"
             }
     },
     {
@@ -14,7 +15,8 @@
         "fields":{
             "title":"movie 2",
             "description":"Description movie 2",
-            "category":"Movie"
+            "category":"Movie",
+            "plan":"Premium"
             }
     },
     {
@@ -23,7 +25,8 @@
         "fields":{
             "title":"movie 3",
             "description":"Description movie 3",
-            "category":"Movie"
+            "category":"Movie",
+            "plan":"Premium"
             }
     },
     {
@@ -32,7 +35,8 @@
         "fields":{
             "title":"movie 4",
             "description":"Description movie 4",
-            "category":"Movie"
+            "category":"Movie",
+            "plan":"Premium"
             }
     },
     {
@@ -41,7 +45,8 @@
         "fields":{
             "title":"movie 5",
             "description":"Description movie 5",
-            "category":"Movie"
+            "category":"Movie",
+            "plan":"Premium"
             }
     },
     {
@@ -50,7 +55,8 @@
         "fields":{
             "title":"movie 6",
             "description":"Description movie 6",
-            "category":"Movie"
+            "category":"Movie",
+            "plan":"Premium"
             }
     },
     {
@@ -59,7 +65,8 @@
         "fields":{
             "title":"movie 7",
             "description":"Description movie 7",
-            "category":"Movie"
+            "category":"Movie",
+            "plan":"Premium"
             }
     },
     {
@@ -68,7 +75,8 @@
         "fields":{
             "title":"movie 8",
             "description":"Description movie 8",
-            "category":"Movie"
+            "category":"Movie",
+            "plan":"Premium"
             }
     },
     {
@@ -77,7 +85,8 @@
         "fields":{
             "title":"movie 9",
             "description":"Description movie 9",
-            "category":"Movie"
+            "category":"Movie",
+            "plan":"Premium"
             }
     },
     {
@@ -86,7 +95,8 @@
         "fields":{
             "title":"movie 10",
             "description":"Description movie 10",
-            "category":"Movie"
+            "category":"Movie",
+            "plan":"Premium"
             }
     },
 
@@ -96,7 +106,8 @@
         "fields":{
             "title":"video 1",
             "description":"Description video 1",
-            "category":"Video"
+            "category":"Video",
+            "plan":"Premium"
             }
     },
     {
@@ -105,7 +116,8 @@
         "fields":{
             "title":"video 2",
             "description":"Description video 2",
-            "category":"Video"
+            "category":"Video",
+            "plan":"Premium"
             }
     },
     {
@@ -114,7 +126,8 @@
         "fields":{
             "title":"video 3",
             "description":"Description video 3",
-            "category":"Video"
+            "category":"Video",
+            "plan":"Premium"
             }
     },
     {
@@ -123,7 +136,8 @@
         "fields":{
             "title":"video 4",
             "description":"Description video 4",
-            "category":"Video"
+            "category":"Video",
+            "plan":"Premium"
             }
     },
     {
@@ -132,7 +146,8 @@
         "fields":{
             "title":"video 5",
             "description":"Description video 5",
-            "category":"Video"
+            "category":"Video",
+            "plan":"Premium"
             }
     },
     {
@@ -141,7 +156,8 @@
         "fields":{
             "title":"video 6",
             "description":"Description video 6",
-            "category":"Video"
+            "category":"Video",
+            "plan":"Premium"
             }
     },
     {
@@ -150,7 +166,8 @@
         "fields":{
             "title":"video 7",
             "description":"Description video 7",
-            "category":"Video"
+            "category":"Video",
+            "plan":"Premium"
             }
     },
     {
@@ -159,7 +176,8 @@
         "fields":{
             "title":"video 8",
             "description":"Description video 8",
-            "category":"Video"
+            "category":"Video",
+            "plan":"Premium"
             }
     },
     {
@@ -168,7 +186,8 @@
         "fields":{
             "title":"video 9",
             "description":"Description video 9",
-            "category":"Video"
+            "category":"Video",
+            "plan":"Premium"
             }
     },
     {
@@ -177,7 +196,8 @@
         "fields":{
             "title":"video 10",
             "description":"Description video 10",
-            "category":"Video"
+            "category":"Video",
+            "plan":"Premium"
             }
     },
 
@@ -187,7 +207,8 @@
         "fields":{
             "title":"book 1",
             "description":"Description book 1",
-            "category":"Book"
+            "category":"Book",
+            "plan":"Premium"
             }
     },
     {
@@ -196,7 +217,8 @@
         "fields":{
             "title":"book 2",
             "description":"Description book 2",
-            "category":"Book"
+            "category":"Book",
+            "plan":"Premium"
             }
     },
     {
@@ -205,7 +227,8 @@
         "fields":{
             "title":"book 3",
             "description":"Description book 3",
-            "category":"Book"
+            "category":"Book",
+            "plan":"Premium"
             }
     },
     {
@@ -214,7 +237,8 @@
         "fields":{
             "title":"book 4",
             "description":"Description book 4",
-            "category":"Book"
+            "category":"Book",
+            "plan":"Premium"
             }
     },
     {
@@ -223,7 +247,8 @@
         "fields":{
             "title":"book 5",
             "description":"Description book 5",
-            "category":"Book"
+            "category":"Book",
+            "plan":"Premium"
             }
     },
     {
@@ -232,7 +257,8 @@
         "fields":{
             "title":"book 6",
             "description":"Description book 6",
-            "category":"Book"
+            "category":"Book",
+            "plan":"Premium"
             }
     },
     {
@@ -241,7 +267,8 @@
         "fields":{
             "title":"book 7",
             "description":"Description book 7",
-            "category":"Book"
+            "category":"Book",
+            "plan":"Premium"
             }
     },
     {
@@ -250,7 +277,8 @@
         "fields":{
             "title":"book 8",
             "description":"Description book 8",
-            "category":"Book"
+            "category":"Book",
+            "plan":"Premium"
             }
     },
     {
@@ -259,7 +287,8 @@
         "fields":{
             "title":"book 9",
             "description":"Description book 9",
-            "category":"Book"
+            "category":"Book",
+            "plan":"Premium"
             }
     },
     {
@@ -268,7 +297,8 @@
         "fields":{
             "title":"book 10",
             "description":"Description book 10",
-            "category":"Book"
+            "category":"Book",
+            "plan":"Premium"
             }
     },
 
@@ -278,7 +308,8 @@
         "fields":{
             "title":"podcast 1",
             "description":"Description podcast 1",
-            "category":"Podcast"
+            "category":"Podcast",
+            "plan":"Premium"
             }
     },
     {
@@ -287,7 +318,8 @@
         "fields":{
             "title":"podcast 2",
             "description":"Description podcast 2",
-            "category":"Podcast"
+            "category":"Podcast",
+            "plan":"Premium"
             }
     },
     {
@@ -296,7 +328,8 @@
         "fields":{
             "title":"podcast 3",
             "description":"Description podcast 3",
-            "category":"Podcast"
+            "category":"Podcast",
+            "plan":"Premium"
             }
     },
     {
@@ -305,7 +338,8 @@
         "fields":{
             "title":"podcast 4",
             "description":"Description podcast 4",
-            "category":"Podcast"
+            "category":"Podcast",
+            "plan":"Premium"
             }
     },
     {
@@ -314,7 +348,8 @@
         "fields":{
             "title":"podcast 5",
             "description":"Description podcast 5",
-            "category":"Podcast"
+            "category":"Podcast",
+            "plan":"Premium"
             }
     },
     {
@@ -323,7 +358,8 @@
         "fields":{
             "title":"podcast 6",
             "description":"Description podcast 6",
-            "category":"Podcast"
+            "category":"Podcast",
+            "plan":"Premium"
             }
     },
     {
@@ -332,7 +368,8 @@
         "fields":{
             "title":"podcast 7",
             "description":"Description podcast 7",
-            "category":"Podcast"
+            "category":"Podcast",
+            "plan":"Premium"
             }
     },
     {
@@ -341,7 +378,8 @@
         "fields":{
             "title":"podcast 8",
             "description":"Description podcast 8",
-            "category":"Podcast"
+            "category":"Podcast",
+            "plan":"Premium"
             }
     },
     {
@@ -350,7 +388,8 @@
         "fields":{
             "title":"podcast 9",
             "description":"Description podcast 9",
-            "category":"Podcast"
+            "category":"Podcast",
+            "plan":"Premium"
             }
     },
     {
@@ -359,7 +398,8 @@
         "fields":{
             "title":"podcast 10",
             "description":"Description podcast 10",
-            "category":"Podcast"
+            "category":"Podcast",
+            "plan":"Premium"
             }
     },
 
@@ -369,7 +409,8 @@
         "fields":{
             "title":"Activity 1",
             "description":"Description Activity 1",
-            "category":"Activity"
+            "category":"Activity",
+            "plan":"Premium"
             }
     },
     {
@@ -378,7 +419,8 @@
         "fields":{
             "title":"Activity 2",
             "description":"Description Activity 2",
-            "category":"Activity"
+            "category":"Activity",
+            "plan":"Premium"
             }
     },
     {
@@ -387,7 +429,8 @@
         "fields":{
             "title":"Activity 3",
             "description":"Description Activity 3",
-            "category":"Activity"
+            "category":"Activity",
+            "plan":"Premium"
             }
     },
     {
@@ -396,7 +439,8 @@
         "fields":{
             "title":"Activity 4",
             "description":"Description Activity 4",
-            "category":"Activity"
+            "category":"Activity",
+            "plan":"Premium"
             }
     },
     {
@@ -405,7 +449,8 @@
         "fields":{
             "title":"Activity 5",
             "description":"Description Activity 5",
-            "category":"Activity"
+            "category":"Activity",
+            "plan":"Premium"
             }
     },
     {
@@ -414,7 +459,8 @@
         "fields":{
             "title":"Activity 6",
             "description":"Description Activity 6",
-            "category":"Activity"
+            "category":"Activity",
+            "plan":"Premium"
             }
     },
     {
@@ -423,7 +469,8 @@
         "fields":{
             "title":"Activity 7",
             "description":"Description Activity 7",
-            "category":"Activity"
+            "category":"Activity",
+            "plan":"Premium"
             }
     },
     {
@@ -432,7 +479,8 @@
         "fields":{
             "title":"Activity 8",
             "description":"Description Activity 8",
-            "category":"Activity"
+            "category":"Activity",
+            "plan":"Premium"
             }
     },
     {
@@ -441,7 +489,8 @@
         "fields":{
             "title":"Activity 9",
             "description":"Description Activity 9",
-            "category":"Activity"
+            "category":"Activity",
+            "plan":"Premium"
             }
     },
     {
@@ -450,7 +499,438 @@
         "fields":{
             "title":"Activity 10",
             "description":"Description Activity 10",
-            "category":"Activity"
+            "category":"Activity",
+            "plan":"Premium"
+            }
+    },
+    {
+        "pk":51,
+        "model":"indications.indication",
+        "fields":{
+            "title":"movie 1",
+            "description":"Description movie 1",
+            "category":"Movie",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":52,
+        "model":"indications.indication",
+        "fields":{
+            "title":"movie 2",
+            "description":"Description movie 2",
+            "category":"Movie",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":53,
+        "model":"indications.indication",
+        "fields":{
+            "title":"movie 3",
+            "description":"Description movie 3",
+            "category":"Movie",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":54,
+        "model":"indications.indication",
+        "fields":{
+            "title":"movie 4",
+            "description":"Description movie 4",
+            "category":"Movie",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":55,
+        "model":"indications.indication",
+        "fields":{
+            "title":"movie 5",
+            "description":"Description movie 5",
+            "category":"Movie",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":56,
+        "model":"indications.indication",
+        "fields":{
+            "title":"movie 6",
+            "description":"Description movie 6",
+            "category":"Movie",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":57,
+        "model":"indications.indication",
+        "fields":{
+            "title":"video 1",
+            "description":"Description video 1",
+            "category":"Video",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":58,
+        "model":"indications.indication",
+        "fields":{
+            "title":"video 2",
+            "description":"Description video 2",
+            "category":"Video",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":59,
+        "model":"indications.indication",
+        "fields":{
+            "title":"video 3",
+            "description":"Description video 3",
+            "category":"Video",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":60,
+        "model":"indications.indication",
+        "fields":{
+            "title":"video 4",
+            "description":"Description video 4",
+            "category":"Video",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":61,
+        "model":"indications.indication",
+        "fields":{
+            "title":"video 5",
+            "description":"Description video 5",
+            "category":"Video",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":62,
+        "model":"indications.indication",
+        "fields":{
+            "title":"video 6",
+            "description":"Description video 6",
+            "category":"Video",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":63,
+        "model":"indications.indication",
+        "fields":{
+            "title":"book 1",
+            "description":"Description book 1",
+            "category":"Book",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":64,
+        "model":"indications.indication",
+        "fields":{
+            "title":"book 2",
+            "description":"Description book 2",
+            "category":"Book",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":65,
+        "model":"indications.indication",
+        "fields":{
+            "title":"book 3",
+            "description":"Description book 3",
+            "category":"Book",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":66,
+        "model":"indications.indication",
+        "fields":{
+            "title":"book 4",
+            "description":"Description book 4",
+            "category":"Book",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":67,
+        "model":"indications.indication",
+        "fields":{
+            "title":"book 5",
+            "description":"Description book 5",
+            "category":"Book",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":68,
+        "model":"indications.indication",
+        "fields":{
+            "title":"book 6",
+            "description":"Description book 6",
+            "category":"Book",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":69,
+        "model":"indications.indication",
+        "fields":{
+            "title":"podcast 1",
+            "description":"Description podcast 1",
+            "category":"Podcast",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":70,
+        "model":"indications.indication",
+        "fields":{
+            "title":"podcast 2",
+            "description":"Description podcast 2",
+            "category":"Podcast",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":71,
+        "model":"indications.indication",
+        "fields":{
+            "title":"podcast 3",
+            "description":"Description podcast 3",
+            "category":"Podcast",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":72,
+        "model":"indications.indication",
+        "fields":{
+            "title":"podcast 4",
+            "description":"Description podcast 4",
+            "category":"Podcast",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":73,
+        "model":"indications.indication",
+        "fields":{
+            "title":"podcast 5",
+            "description":"Description podcast 5",
+            "category":"Podcast",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":74,
+        "model":"indications.indication",
+        "fields":{
+            "title":"podcast 6",
+            "description":"Description podcast 6",
+            "category":"Podcast",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":75,
+        "model":"indications.indication",
+        "fields":{
+            "title":"Activity 1",
+            "description":"Description Activity 1",
+            "category":"Activity",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":76,
+        "model":"indications.indication",
+        "fields":{
+            "title":"Activity 2",
+            "description":"Description Activity 2",
+            "category":"Activity",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":77,
+        "model":"indications.indication",
+        "fields":{
+            "title":"Activity 3",
+            "description":"Description Activity 3",
+            "category":"Activity",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":78,
+        "model":"indications.indication",
+        "fields":{
+            "title":"Activity 4",
+            "description":"Description Activity 4",
+            "category":"Activity",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":79,
+        "model":"indications.indication",
+        "fields":{
+            "title":"Activity 5",
+            "description":"Description Activity 5",
+            "category":"Activity",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":80,
+        "model":"indications.indication",
+        "fields":{
+            "title":"Activity 6",
+            "description":"Description Activity 6",
+            "category":"Activity",
+            "plan":"Standart"
+            }
+    },
+    {
+        "pk":81,
+        "model":"indications.indication",
+        "fields":{
+            "title":"movie 1",
+            "description":"Description movie 1",
+            "category":"Movie",
+            "plan":"Basic"
+            }
+    },
+    {
+        "pk":82,
+        "model":"indications.indication",
+        "fields":{
+            "title":"movie 2",
+            "description":"Description movie 2",
+            "category":"Movie",
+            "plan":"Basic"
+            }
+    },
+    {
+        "pk":83,
+        "model":"indications.indication",
+        "fields":{
+            "title":"video 1",
+            "description":"Description video 1",
+            "category":"Video",
+            "plan":"Basic"
+            }
+    },
+    {
+        "pk":84,
+        "model":"indications.indication",
+        "fields":{
+            "title":"video 2",
+            "description":"Description video 2",
+            "category":"Video",
+            "plan":"Basic"
+            }
+    },
+    {
+        "pk":85,
+        "model":"indications.indication",
+        "fields":{
+            "title":"book 1",
+            "description":"Description book 1",
+            "category":"Book",
+            "plan":"Basic"
+            }
+    },
+    {
+        "pk":86,
+        "model":"indications.indication",
+        "fields":{
+            "title":"book 2",
+            "description":"Description book 2",
+            "category":"Book",
+            "plan":"Basic"
+            }
+    },
+    {
+        "pk":87,
+        "model":"indications.indication",
+        "fields":{
+            "title":"podcast 1",
+            "description":"Description podcast 1",
+            "category":"Podcast",
+            "plan":"Basic"
+            }
+    },
+    {
+        "pk":88,
+        "model":"indications.indication",
+        "fields":{
+            "title":"podcast 2",
+            "description":"Description podcast 2",
+            "category":"Podcast",
+            "plan":"Basic"
+            }
+    },
+    {
+        "pk":89,
+        "model":"indications.indication",
+        "fields":{
+            "title":"Activity 1",
+            "description":"Description Activity 1",
+            "category":"Activity",
+            "plan":"Basic"
+            }
+    },
+    {
+        "pk":90,
+        "model":"indications.indication",
+        "fields":{
+            "title":"Activity 2",
+            "description":"Description Activity 2",
+            "category":"Activity",
+            "plan":"Basic"
+            }
+    },
+    {
+        "pk":91,
+        "model":"indications.indication",
+        "fields":{
+            "title":"movie 1",
+            "description":"Description movie 1",
+            "category":"Movie",
+            "plan":"Free"
+            }
+    },
+    {
+        "pk":92,
+        "model":"indications.indication",
+        "fields":{
+            "title":"book 1",
+            "description":"Description book 1",
+            "category":"Book",
+            "plan":"Free"
+            }
+    },
+    {
+        "pk":93,
+        "model":"indications.indication",
+        "fields":{
+            "title":"Activity 1",
+            "description":"Description Activity 1",
+            "category":"Activity",
+            "plan":"Free"
             }
     }
 ]
