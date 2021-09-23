@@ -6,7 +6,7 @@
 {% block content %}
 {% if request.user.coach %}
 
-<h1 class="mt-5">Coach Page</h1>
+<h1 class="mt-5">Coach Page }}</h1>
 
 <div class="container-fluid mt-5">
     <div class="row">
@@ -14,7 +14,7 @@
             <a href="{% url 'profiles:coachee_list' %}">Coachees</a>
         </div>
         <div class="col text-center">
-            <a href="{% url 'session:session' %}">Book Session</a>
+            <a href="{% url 'session:session_date' %}">Book Session</a>
         </div>
         <div class="col text-center">
             <a href="{% url 'profiles:coachee_create' %}">Add Coachee</a>
@@ -28,7 +28,7 @@
     <br>
     <div class="row">
         <div class="col text-center">
-            <a href="{% url 'session:agenda-coach' %}">Agenda</a>
+            <a href="{% url 'session:agenda_coach' %}">Agenda</a>
         </div>
         <div class="col text-center">
             <a href="">Report</a>
