@@ -13,5 +13,6 @@ urlpatterns = [
     path('coachee_list/', CoacheeList.as_view(), name='coachee_list'),
     path('coachee_edit/<int:pk>/', CoacheeEdit.as_view(), name='coachee_edit'),
     path('coachee_delete/<int:pk>/', CoacheeDelete.as_view(), name='coachee_delete'),
+    path('cache_data/', views.cache_data, name='cache_data'),
     path('wh/', webhook, name='webhook'),
 ]
