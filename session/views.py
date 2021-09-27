@@ -10,17 +10,19 @@ def session_date(request):
     template_name = 'session/date.html'
     coachees = Coachee.objects.filter(coach=coach)
     if request.method == "GET":
-        
-       
-
         form = SessionForm(coachees = coachees)
-        context = {
-            'coachee': '',
-            'form': form,
-            'id': coach.id
-        }
-        
-    
+        if not coachees:
+            context = {
+                'coachee': '',
+                'form': form,
+                'id': coach.id
+            }
+        else:
+            context = {
+                'coachee': coachees,
+                'form': form,
+                'id': coach.id
+            }
     if request.method == "POST":
         form = SessionForm(request.POST, coachees=coachees)
         
