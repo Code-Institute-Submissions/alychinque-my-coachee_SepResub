@@ -10,7 +10,7 @@ class CoachForm(forms.ModelForm):
     
     class Meta:
         model = Coach
-        exclude = ('user', 'plan', 'price')
+        exclude = ('user', 'plan', 'price', 'stripe_pid')
 
         widgets = {
             'date_of_birth': forms.DateInput(attrs={'type': 'date'})

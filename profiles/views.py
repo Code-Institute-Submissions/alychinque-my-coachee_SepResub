@@ -20,7 +20,6 @@ def cache_data(request):
             'gender': request.POST.get('gender'),
             'username': request.user,
         })
-        print('passou aqui')
         return HttpResponse(status=200)
     except Exception as e:
         messages.error(request, 'Sorry, your payment cannot be \
@@ -44,14 +43,14 @@ def coach_create(request, plan, price):
     if request.method == "POST":
         form = CoachForm(request.POST)
         if form.is_valid():
+            pid = request.POST.get('client_secret').split('_secret')[0]
             form = form.save(commit=False)
             form.user = request.user
             form.plan = plan.capitalize()
             form.price = int(price)
+            form.stripe_pid = pid
             form.save()
             return redirect('coach_page')
-        else:
-            print('fail')
     else:
 
         form = CoachForm()

@@ -30,6 +30,10 @@
                 {{ form.phone_number | as_crispy_field }}
                 
                 {{ form.gender | as_crispy_field }}
+
+                <input type="text" value="{{ order.plan }}" name="plan" style="visibility: hidden">
+
+                <input type="text" value="{{ order.price }}" name="price" style="visibility: hidden">
                 
             </fieldset>
             <br>
