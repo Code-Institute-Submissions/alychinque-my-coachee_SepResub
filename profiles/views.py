@@ -48,7 +48,7 @@ def coach_create(request, plan, price):
             form.user = request.user
             form.plan = plan.capitalize()
             form.price = int(price)
-            form.stripe_pid = pid
+            form.stripe_pid = str(pid)
             form.save()
             return redirect('coach_page')
     else:
