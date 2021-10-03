@@ -22,7 +22,6 @@ class Coach(models.Model):
     }
     plan = models.CharField(max_length=10, null=False, blank=False, choices=list_plans)
     price = models.DecimalField(decimal_places=0, max_digits=10)
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
 
     class Meta:
         verbose_name = 'Coach'
