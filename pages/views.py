@@ -14,13 +14,6 @@ def contact(request):
         phone = request.POST['phone']
         message = request.POST['message']
 
-        #send an email
-        send_mail(
-            'New message from ' + name, #subject
-            message, #message
-            email, #from email
-            ['alychinque@gmail.com'], #to email
-        )
         return render(request, 'pages/contact.html', {'name': name})
     else:
         return render(request, 'pages/contact.html', {})
