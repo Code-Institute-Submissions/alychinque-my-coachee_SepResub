@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import AppointmentSession, Coachee, Session
 from .forms import SessionAppointmentForm, SessionForm
 from django.http.response import HttpResponse
@@ -76,12 +76,23 @@ def agenda(request):
 
 
 def agenda_show(request, id):
-    session_sessao = Session.objects.filter(appointment_session__id=id)
-    form = SessionForm(session_sessao)
-    context = {
-        'form': form,
-    }
-    return render(request, 'session/agenda_show.html', context)
+    appointment = get_object_or_404(AppointmentSession, id=id)
+    template_name = 'session/agenda_show.html'
+    if request.method == 'POST':
+        form = SessionForm(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.user = request.user
+            form.appointment_session = appointment
+            form.save()
+            return redirect('coach_page')
+    else:
+        form = SessionForm()
+        context = {
+            'form': form,
+            'id': id,
+        }
+    return render(request, template_name, context)
 
 
 def agenda_edit(request, id):

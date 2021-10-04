@@ -6,7 +6,7 @@
 <div class="jumbotron col-10 mt-5">
     <h1 style="text-transform: uppercase;">Session</h1> <br>
     
-    <form action="" method="POST" style="text-transform: uppercase;" id="payment-form">
+    <form action="{% url 'session:agenda_show' id=id %}" method="POST" style="text-transform: uppercase;" id="payment-form">
     
         {% csrf_token %}
         
@@ -20,7 +20,12 @@
             {{ form.indications3 | as_crispy_field }}
             
             {{ form.concluded | as_crispy_field }}
+
         </fieldset>
+        <div>
+            <button id="submit-button" class="btn btn-success btn-lg btn-block" type="submit"
+                style="text-transform: uppercase;">Create</button>
+        </div>
     </form>
 </div>
 

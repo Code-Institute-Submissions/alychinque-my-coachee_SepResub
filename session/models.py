@@ -21,4 +21,4 @@ class Session(models.Model):
     concluded = models.BooleanField(null=False, blank=False)
 
     def  __str__(self):
-	    return self.name
+	    return f'Coachee {self.appointment_session.coachee} number session {self.appointment_session.number_session}.'
