@@ -17,7 +17,22 @@ Happy Code! 👨‍💻 Happy days!
     * [Design Choices](#design-choices)🎨
         * [Fonts](#fonts)
         * [Structure](#structure)
-    * [Deployment](#deployment) 
+* [Wireframes and Flowcharts](#wireframes-and-flowcharts)👨‍🔧
+    * [Wireframes](#wireframes)
+* [Features](#features)🤖
+    * [Existing Features](#existing-features)
+    * [Features to be implemented](#features-to-be-implemented)
+* [Technologies used](#technologies-used)👀
+    * [Languages](#languages)🔍
+    * [Libraries and Frameworks](#libraries-and-frameworks)📚
+    * [Tools](#tools)🔧
+* [Testing](#testing)
+* [Bugs](#bugs)🐞
+* [Future Implementations](#future-implementations)🛸
+* [Deployment](#deployment)
+    * [Local Deployment](#local-deployment)
+    * [Heroku Deployment](#heroku-deployment)
+* [Credits](#credits)
 
 
 ### **User Goals**
@@ -103,6 +118,8 @@ You can find my wireframes below:
 * [Go to Table Wireframes](wireframes/tablet-wireframes.pdf)
 
 ## **Deployment**
+
+### Heroku Deployment
 
 #### Steps to deploy my-coachee to Heroku using Postgres
 
