@@ -117,6 +117,125 @@ You can find my wireframes below:
 #### Tablet Wireframes
 * [Go to Table Wireframes](wireframes/tablet-wireframes.pdf)
 
+## **Features**🤖
+
+### **Existing Features**
+
+* Sign-In and Out functionality
+* Payment system
+* Add multiple coachees per user 
+* CRUD Functions:
+    * Create: possibility to add various coachees.
+    * Read: list all your coachees
+    * Update: edit your coachees
+    * Delete: delete your coachees
+* CRUD Functions:
+    * Create: possibility to add various appointments.
+    * Read: list all your appointments
+    * Update: edit your appointments
+    * Delete: delete your appointments
+* CRUD Functions:
+    * Create: possibility to add various sessions.
+    * Read: list all your sessions
+    * Update: edit your sessions
+    * Delete: delete your sessions
+
+### **Features to be implemented**
+
+* Have a fucionality to depends on plan show more or less indications.
+* Have a more extensive management over the system.
+* Have a functionality to report time spent in the platform
+* Have a functionality to show old appointments 
+
+## **Technologies used**👀
+
+### **Languages**🔍
+
+* [HTML](https://en.wikipedia.org/wiki/HTML)
+* [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+* [Python](https://www.python.org/)
+
+### **Libraries and Frameworks**📚
+
+* [Django](https://www.djangoproject.com/)
+* [Font Awesome](https://fontawesome.com/)
+* [Bootstrap](https://getbootstrap.com/)
+* [Google Fonts](https://fonts.google.com/)
+* [jQuery](https://jquery.com/)
+
+### **Tools**🔧
+* [Git](https://git-scm.com/)
+* [Heroku](https://www.heroku.com/)
+* [Balsamic](https://balsamiq.com/wireframes/)
+
+## **Testing**
+
+### **Register**
+
+#### User story: As a user, I would like to be able to register for the web platform so I can have my personal environment.
+
+* **Plan**  
+Use allauth and then create a coach
+
+* **Implementation**  
+Allauth manages the registration 
+
+* **Test**  
+One can register by insert email, username and password
+
+* **Verdict**    
+The test has passed all the criteria and works like planned.
+
+### **Login**
+
+#### User story: As a user, I want to login after I created an account and see my previous inserted information.
+
+* **Plan**  
+Use allauth to gain access to the platform
+
+* **Implementation**  
+Allauth manages the login 
+
+* **Test**  
+One can login by insert username and password
+
+* **Verdict**    
+The test has passed all the criteria and works like planned.
+
+### **CRUD Coachees**
+
+#### User story: As a user, I would like to be able to add, update, and delete coachees.
+
+* **Plan**  
+Create view, urls and templates to create, read, update and delete coachees.
+
+* **Implementation**  
+Created the logic in the view and a template for each crud step.
+
+* **Test**  
+One can create, read, update and delete coachees.
+
+* **Verdict**    
+The test has passed all the criteria and works like planned.
+
+### **CRUD Sessions**
+
+#### User story: As a user, I would like to be able to add, update, and delete sessions.
+
+* **Plan**  
+Create view, urls and templates to create, read, update and delete sessions.
+
+* **Implementation**  
+Created the logic in the view and a template for each crud step.
+
+* **Test**  
+One can create, read, update and delete sessions.
+
+* **Verdict**    
+The test has passed all the criteria and works like planned.
+
+
 ## **Deployment**
 
 ### Heroku Deployment
