@@ -3,7 +3,27 @@
 {% load bootstrap4 %}
 {% block content %}
 
-{{ session_sessao.jornal }}
+<div class="jumbotron col-10 mt-5">
+    <h1 style="text-transform: uppercase;">Session</h1> <br>
+    
+    <form action="" method="POST" style="text-transform: uppercase;" id="payment-form">
+    
+        {% csrf_token %}
+        
+        <fieldset class="rounded px-3">
+            {{ form.jornal | as_crispy_field }}
+
+            {{ form.indications1 | as_crispy_field }}
+
+            {{ form.indications2 | as_crispy_field }}
+
+            {{ form.indications3 | as_crispy_field }}
+            
+            {{ form.concluded | as_crispy_field }}
+        </fieldset>
+    </form>
+</div>
+
 
 
 {% endblock content %}

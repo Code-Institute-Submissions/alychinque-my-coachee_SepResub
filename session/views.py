@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import AppointmentSession, Coachee, Session
-from .forms import SessionForm
+from .forms import SessionAppointmentForm, SessionForm
 from django.http.response import HttpResponse
 import json
 
@@ -10,7 +10,7 @@ def session_date(request):
     template_name = 'session/date.html'
     coachees = Coachee.objects.filter(coach=coach)
     if request.method == "GET":
-        form = SessionForm(coachees = coachees)
+        form = SessionAppointmentForm(coachees = coachees)
         if not coachees:
             context = {
                 'coachee': '',
@@ -24,7 +24,7 @@ def session_date(request):
                 'id': coach.id
             }
     if request.method == "POST":
-        form = SessionForm(request.POST, coachees=coachees)
+        form = SessionAppointmentForm(request.POST, coachees=coachees)
         
         if form.is_valid():
             coachee = request.POST.get('coachee')
@@ -77,11 +77,14 @@ def agenda(request):
 
 def agenda_show(request, id):
     session_sessao = Session.objects.filter(appointment_session__id=id)
-    return render(request, 'session/agenda_show.html', context={ 'session': session_sessao})
+    form = SessionForm(session_sessao)
+    context = {
+        'form': form,
+    }
+    return render(request, 'session/agenda_show.html', context)
 
 
 def agenda_edit(request, id):
-    
     return render(request, 'session/agenda_edit.html', context={})
 
 
@@ -100,7 +103,7 @@ def session_edit(request, id):
             'time': (a.time),
         }
     
-    form = SessionForm(coachees = coachees)
+    form = SessionAppointmentForm(coachees = coachees)
     template_name = 'session/date_edit.html'
     context = {
         'form': form,
@@ -109,7 +112,7 @@ def session_edit(request, id):
     }
 
     if request.method == "POST":
-        form = SessionForm(request.POST, coachees=coachees)
+        form = SessionAppointmentForm(request.POST, coachees=coachees)
         agenda.delete()
         if form.is_valid():
             coachee = request.POST.get('coachee')

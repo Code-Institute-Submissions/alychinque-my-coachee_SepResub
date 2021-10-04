@@ -1,13 +1,9 @@
 from django import forms
-from django.forms import widgets
-from django.forms.widgets import DateInput, TimeInput
-from .models import AppointmentSession, Coachee
+from .models import AppointmentSession, Session
 from datetime import date
 
 
-class SessionForm(forms.ModelForm):
-    
-    
+class SessionAppointmentForm(forms.ModelForm):
     class Meta:
         model = AppointmentSession
         fields = ('coachee', 'date', 'time',)
@@ -27,3 +23,9 @@ class SessionForm(forms.ModelForm):
         kwargs.pop('coachees')
         super().__init__(*args, **kwargs)
         self.fields['coachee'].queryset=coachees
+
+
+class SessionForm(forms.ModelForm):
+    class Meta:
+        model = Session
+        fields = ('jornal', 'indications1', 'indications2', 'indications3', 'concluded')
