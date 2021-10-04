@@ -31,6 +31,7 @@ def cache_data(request):
 def coach_create(request, plan, price):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
+    pid = request.POST.get('client_secret').split('_secret')[0]
     if plan != 'Free':
         total = price
         stripe_total = round(int(total) * 100)
@@ -43,7 +44,6 @@ def coach_create(request, plan, price):
     if request.method == "POST":
         form = CoachForm(request.POST)
         if form.is_valid():
-            pid = request.POST.get('client_secret').split('_secret')[0]
             form = form.save(commit=False)
             form.user = request.user
             form.plan = plan.capitalize()

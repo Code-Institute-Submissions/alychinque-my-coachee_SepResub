@@ -42,7 +42,7 @@ class StripeWH_Handler:
                     gender__iexact=gender,
                     plan__iexact=plan,
                     price__iexact=price,
-                    stripe_pid=pid,
+                    stripe_pid=str(pid),
                 )
                 coach_exists = True
                 break
@@ -65,11 +65,11 @@ class StripeWH_Handler:
                     gender= gender,
                     plan= plan,
                     price= price,
-                    stripe_pid= pid,
+                    stripe_pid= str(pid),
                 )
             except Exception as e:
-                if order:
-                    order.delete()
+                if coach:
+                    coach.delete()
                 return HttpResponse(content=f'Webhook received: {event["type"]} | ERROR: {e}',
                 status=500)
 
