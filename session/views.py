@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic import ListView
 from .models import AppointmentSession, Coachee, Session
 from .forms import SessionAppointmentForm, SessionForm
 from django.http.response import HttpResponse
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 import json
 
 
@@ -161,4 +163,27 @@ def session_delete(request, id):
     agenda = AppointmentSession.objects.filter(coach=coach).order_by('date', 'time')
 
     return render(request, template_name, context= { 'agenda': agenda })
+
+class SessionList(ListView):
+    model = Session
+    template_name = "session/prev-sessions.html"
+    context_object_name = 'sessions'
+    paginate_by = 10
+    
+    def get_queryset(self):
+        queryset = super(SessionList, self).get_queryset()
+        queryset = queryset.filter(AppointmentSession_coach=self.request.user.coach)
+        return queryset
+
+class SessionEdit(UpdateView):
+	model = Session
+	fields = ['jornal', 'indications1', 'indications2', 'indications3']
+	template_name = 'session/session_edit.html'
+	success_url = '/session/session_list/'
+
+
+class SessionDelete(DeleteView):
+	model = Session
+	template_name = 'session/session_delete.html'
+	success_url = '/session/session_list/'
     

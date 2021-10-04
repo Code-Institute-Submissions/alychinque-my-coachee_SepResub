@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+
+{% if not sessions %}
+<div class="text-center mt-5">
+    <h2>There are not concluded sessions <a href="{% url 'session:agenda' %}">Go to agenda</a></h2>
+{% else %}
+<section class="table-section text-center">
+	<div class="table-responsive">
+		<table id="manager_table" class="table display responsive">
+			<!--header-->
+			<thead style="text-transform: uppercase;">
+				<tr>
+					<th class="all">Jornal</th>
+					<th class="all">indication 1</th>
+					<th class="all">indication 2</th>
+					<th class="all">indication 3</th>
+					<th class="all">Edit</th>
+					<th class="all">Delete</th>
+				</tr>
+			</thead>
+			<!--body-->
+			<tbody>
+			<!--loop over activity content-->
+			
+			{% for ses in sessions %}					
+					    
+			    <tr dt-responsive>
+
+					<td>{{ ses.jornal}} </td>
+                    <td>{{ ses.indications1}}</td>
+					<td>{{ ses.indications2}}</td>
+					<td>{{ ses.indications3}}</td>
+					<td><a href="{% url 'session:session_edit' pk=session.pk %}">edit</a></td>
+					<td><a href="{% url 'session:session_delete' pk=session.pk %}">delete</a></td>
+				</tr>
+			{% endfor %}	
+			</tbody>
+		</table>
+
+	</div>
+
+</section>
+
+<div class="pagination">
+	<span class="step-links">
+		{% if page_obj.has_previous %}
+		<a href="?page=1">&laquo; first</a>
+		<a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+		
+        <span class="current">
+			Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+		
+        {% if page_obj.has_next %}
+		<a href="?page={{ page_obj.next_page_number }}">next</a>
+		<a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% endif %}
+{% endblock %}
