@@ -17,6 +17,7 @@ Happy Code! 👨‍💻 Happy days!
     * [Design Choices](#design-choices)🎨
         * [Fonts](#fonts)
         * [Structure](#structure)
+    * [Deployment](#deployment) 
 
 
 ### **User Goals**
@@ -101,9 +102,9 @@ You can find my wireframes below:
 #### Tablet Wireframes
 * [Go to Table Wireframes](wireframes/tablet-wireframes.pdf)
 
-### Deployment
+## **Deployment**
 
-## Steps to deploy my-coachee to Heroku using Postgres
+#### Steps to deploy my-coachee to Heroku using Postgres
 
 ### In Heroku:
 1. Setup and account and log in to Heroku
