@@ -33,8 +33,8 @@
                     <td>{{ ses.indications1}}</td>
 					<td>{{ ses.indications2}}</td>
 					<td>{{ ses.indications3}}</td>
-					<td><a href="{% url 'session:session_edit' pk=session.pk %}">edit</a></td>
-					<td><a href="{% url 'session:session_delete' pk=session.pk %}">delete</a></td>
+					<td><a href="{% url 'session:session_edit' pk=ses.id %}">edit</a></td>
+					<td><a href="{% url 'session:session_delete' pk=ses.id %}">delete</a></td>
 				</tr>
 			{% endfor %}	
 			</tbody>

@@ -164,6 +164,17 @@ def session_delete(request, id):
 
     return render(request, template_name, context= { 'agenda': agenda })
 
+def session_list(request):
+    appointments = AppointmentSession.objects.filter(coach=request.user.coach)
+    session = []
+    for appointment in appointments:
+        sessions = Session.objects.filter(appointment_session=appointment)
+    template_name = "session/prev-sessions.html"
+    context = {
+        'sessions':sessions
+    }
+    return render(request, template_name, context)
+
 class SessionList(ListView):
     model = Session
     template_name = "session/prev-sessions.html"
@@ -172,7 +183,7 @@ class SessionList(ListView):
     
     def get_queryset(self):
         queryset = super(SessionList, self).get_queryset()
-        queryset = queryset.filter(AppointmentSession_coach=self.request.user.coach)
+        queryset = queryset.filter(appointment_sessioncoach=self.request.user.coach)
         return queryset
 
 class SessionEdit(UpdateView):
